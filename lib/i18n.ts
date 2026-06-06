@@ -9,6 +9,7 @@ const t = {
       books: "Books",
       speaking: "Speaking",
       about: "About",
+      links: "SNS",
       contact: "Contact",
     },
     hero: {
@@ -101,6 +102,7 @@ const t = {
       books: "저서",
       speaking: "강연",
       about: "프로필",
+      links: "SNS",
       contact: "연락하기",
     },
     hero: {
