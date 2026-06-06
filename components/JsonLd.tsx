@@ -2,7 +2,7 @@ export function JsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "변재일",
+    name: "리드제일",
     alternateName: ["Brasley Byun", "리드재일"],
     jobTitle: "비즈니스 개발 전문가 \xB7 링크드인 전략가 \xB7 작가",
     description:
@@ -33,7 +33,7 @@ export function JsonLd() {
         isbn: "9791163038337",
         datePublished: "2026-03-24",
         publisher: { "@type": "Organization", name: "이지스퍼블리싱" },
-        author: { "@type": "Person", name: "변재일" },
+        author: { "@type": "Person", name: "리드제일" },
         url: "https://www.yes24.com/product/goods/178728770",
         numberOfPages: 296,
         inLanguage: "ko",
@@ -46,7 +46,7 @@ export function JsonLd() {
         publisher: { "@type": "Organization", name: "좋은땅" },
         author: [
           { "@type": "Person", name: "이준혁" },
-          { "@type": "Person", name: "변재일" },
+          { "@type": "Person", name: "리드제일" },
         ],
         url: "https://www.yes24.com/product/goods/160620583",
         inLanguage: "ko",

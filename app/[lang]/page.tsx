@@ -51,6 +51,16 @@ export default async function HomePage({
                 </a>
               </div>
             </div>
+            <div className="shrink-0">
+              <Image
+                src="/hero-book.png"
+                alt="된다! 링크드인 활용법"
+                width={280}
+                height={400}
+                priority
+                className="rounded-2xl shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>

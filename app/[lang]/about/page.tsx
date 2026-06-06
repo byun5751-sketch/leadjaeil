@@ -13,7 +13,7 @@ export async function generateMetadata({
   const title = lang === "ko" ? "프로필" : "About";
   const description =
     lang === "ko"
-      ? "변재일 프로필 -- 경력, 학력, 채널, 강점, 핵심 역량"
+      ? "리드제일 프로필 -- 경력, 학력, 채널, 강점, 핵심 역량"
       : "About Brasley Byun -- career, education, channels, strengths, competencies";
   return { title, description };
 }
@@ -115,7 +115,7 @@ export default async function AboutPage({
       <div className="mt-6">
         <div>
           <h2 className="font-serif text-2xl text-text">
-            {lang === "ko" ? "변재일 (Brasley Byun)" : "Brasley Byun"}
+            {lang === "ko" ? "리드제일 (Brasley Byun)" : "Brasley Byun"}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-text-secondary">
             {lang === "ko"

@@ -14,7 +14,7 @@ export async function generateMetadata({
   const title = lang === "ko" ? "강연 \xB7 활동" : "Speaking & Activities";
   const description =
     lang === "ko"
-      ? "변재일 외부 강연, 멘토링, 마케팅 캠페인 경험"
+      ? "리드제일 외부 강연, 멘토링, 마케팅 캠페인 경험"
       : "Brasley Byun speaking events, mentoring, and marketing campaigns";
   return { title, description };
 }
