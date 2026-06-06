@@ -2,16 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Globe } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 
 export function Header({ lang }: { lang: Lang }) {
   const pathname = usePathname();
   const t = getTranslations(lang);
-  const otherLang = lang === "en" ? "ko" : "en";
-  const switchPath = pathname.replace(`/${lang}`, `/${otherLang}`);
-  const currentLangLabel = lang === "ko" ? "한국어" : "EN";
+  const koPath = pathname.replace(`/${lang}`, "/ko");
+  const enPath = pathname.replace(`/${lang}`, "/en");
 
   const links = [
     { href: `/${lang}`, label: t.nav.home },
@@ -51,14 +49,28 @@ export function Header({ lang }: { lang: Lang }) {
         </ul>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <Link
-            href={switchPath}
-            aria-label={lang === "ko" ? "Switch to English" : "한국어로 보기"}
-            className="flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-xs text-text-secondary transition-colors hover:bg-surface-warm hover:text-text"
-          >
-            <Globe size={13} />
-            {currentLangLabel}
-          </Link>
+          <div className="flex rounded-full border border-border bg-surface p-0.5">
+            <Link
+              href={koPath}
+              className={`rounded-full px-2.5 py-1 text-xs font-medium transition-colors ${
+                lang === "ko"
+                  ? "bg-highlight text-white"
+                  : "text-text-secondary hover:text-text"
+              }`}
+            >
+              한국어
+            </Link>
+            <Link
+              href={enPath}
+              className={`rounded-full px-2.5 py-1 text-xs font-medium transition-colors ${
+                lang === "en"
+                  ? "bg-highlight text-white"
+                  : "text-text-secondary hover:text-text"
+              }`}
+            >
+              EN
+            </Link>
+          </div>
           <a
             href="#contact"
             className="rounded-full bg-highlight px-4 py-1.5 text-[13px] font-medium text-white transition-colors hover:bg-text"
