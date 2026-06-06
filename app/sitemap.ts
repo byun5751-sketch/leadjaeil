@@ -4,7 +4,7 @@ const SITE_URL = "https://leadjaeil.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["en", "ko"];
-  const routes = ["", "/books", "/speaking", "/about", "/services", "/links"];
+  const routes = ["", "/books", "/speaking", "/services", "/links"];
 
   return locales.flatMap((lang) =>
     routes.map((route) => ({

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, ExternalLink } from "lucide-react";
+import { ArrowRight, BookOpen, ExternalLink, Users, Briefcase } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 import { getData } from "@/lib/get-data";
@@ -69,10 +69,10 @@ export default async function HomePage({
       <section className="border-b border-border bg-surface">
         <div className="site-shell grid grid-cols-2 gap-6 py-10 md:grid-cols-4">
           {[
-            { value: "22,000+", label: t.stats.followers },
+            { value: "30,000+", label: t.stats.followers },
             { value: lang === "ko" ? "130만+" : "1.3M+", label: t.stats.views },
             { value: "2", label: t.stats.books },
-            { value: "10+", label: t.stats.events },
+            { value: "10", label: t.stats.events },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="font-serif text-3xl text-text">{stat.value}</p>
@@ -82,21 +82,48 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* Three Keywords */}
+      {/* Quick Links */}
       <section className="border-b border-border">
-        <div className="site-shell py-20">
-          <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
-            {t.direction.eyebrow}
-          </p>
-          <h2 className="mt-2 font-serif text-3xl text-text">{t.direction.title}</h2>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {t.direction.items.map((item) => (
-              <div key={item.num}>
-                <span className="font-serif text-4xl text-accent-light">{item.num}</span>
-                <h3 className="mt-3 text-lg font-semibold text-text">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">{item.desc}</p>
+        <div className="site-shell py-16">
+          <div className="grid gap-4 md:grid-cols-2">
+            <Link
+              href={`/${lang}/links`}
+              className="group flex items-center gap-5 rounded-xl border border-border bg-surface p-6 transition-colors hover:border-accent-light"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-bg text-accent">
+                <Users size={22} />
               </div>
-            ))}
+              <div className="flex-1">
+                <h3 className="font-semibold text-text group-hover:text-accent">
+                  {lang === "ko" ? "SNS 채널 모아보기" : "SNS Channels"}
+                </h3>
+                <p className="mt-1 text-sm text-text-secondary">
+                  {lang === "ko"
+                    ? "링크드인, 블로그, 뉴스레터 등 운영 채널 바로가기"
+                    : "LinkedIn, blog, newsletter and more"}
+                </p>
+              </div>
+              <ArrowRight size={18} className="shrink-0 text-text-tertiary transition-colors group-hover:text-accent" />
+            </Link>
+            <Link
+              href={`/${lang}/services`}
+              className="group flex items-center gap-5 rounded-xl border border-border bg-surface p-6 transition-colors hover:border-accent-light"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-bg text-accent">
+                <Briefcase size={22} />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold text-text group-hover:text-accent">
+                  {lang === "ko" ? "서비스 바로가기" : "Services"}
+                </h3>
+                <p className="mt-1 text-sm text-text-secondary">
+                  {lang === "ko"
+                    ? "링크드인 워크숍, 무료 오픈채팅방"
+                    : "LinkedIn workshop and free community"}
+                </p>
+              </div>
+              <ArrowRight size={18} className="shrink-0 text-text-tertiary transition-colors group-hover:text-accent" />
+            </Link>
           </div>
         </div>
       </section>

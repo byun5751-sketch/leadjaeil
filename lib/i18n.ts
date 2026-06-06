@@ -8,7 +8,6 @@ const t = {
       home: "Home",
       books: "Books",
       speaking: "Speaking",
-      about: "About",
       services: "Services",
       links: "SNS",
       contact: "Contact",
@@ -27,27 +26,6 @@ const t = {
       views: "Impressions",
       books: "Books Published",
       events: "Speaking Events",
-    },
-    direction: {
-      eyebrow: "Three Keywords",
-      title: "What I Do",
-      items: [
-        {
-          num: "01",
-          title: "Information Structuring",
-          desc: "Collect scattered market data, operational status, and customer references. Organize them into comparable, decision-ready formats.",
-        },
-        {
-          num: "02",
-          title: "Process Improvement",
-          desc: "Identify repetitive or delayed workflows. Convert them into executable systems: checklists, trackers, templates, and manuals.",
-        },
-        {
-          num: "03",
-          title: "Stakeholder Coordination",
-          desc: "Collaborate with team leads, PMs, sales reps, external vendors, and global organizations to deliver completed outcomes.",
-        },
-      ],
     },
     featuredBooks: {
       eyebrow: "Published Works",
@@ -80,15 +58,6 @@ const t = {
       mentoring: "Mentoring",
       campaign: "Campaigns & Publishing",
     },
-    aboutPage: {
-      eyebrow: "Profile",
-      title: "About",
-      career: "Career",
-      education: "Education",
-      channels: "Channels",
-      strengths: "Strengths (Gallup)",
-      competencies: "Core Competencies",
-    },
     footer: {
       tagline:
         "Structuring information, improving processes, and coordinating stakeholders to deliver actionable results.",
@@ -102,7 +71,6 @@ const t = {
       home: "홈",
       books: "저서",
       speaking: "강연",
-      about: "프로필",
       services: "서비스",
       links: "SNS",
       contact: "연락하기",
@@ -121,27 +89,6 @@ const t = {
       views: "누적 조회수",
       books: "출간 도서",
       events: "강연 횟수",
-    },
-    direction: {
-      eyebrow: "세 가지 키워드",
-      title: "이런 일을 합니다",
-      items: [
-        {
-          num: "01",
-          title: "정보 구조화",
-          desc: "흉어진 시장 데이터\xB7운영 현황\xB7고객 레퍼런스를 수집해, 비교 가능하고 의사결정에 바로 쓸 수 있는 형태로 정리합니다.",
-        },
-        {
-          num: "02",
-          title: "프로세스 개선",
-          desc: "반복되거나 지연되는 업무 흐름을 찾아내, 체크리스트\xB7트래커\xB7템플릿\xB7매뉴얼 등 실행 가능한 시스템으로 전환합니다.",
-        },
-        {
-          num: "03",
-          title: "이해관계자 조율",
-          desc: "팀 리드\xB7PM\xB7세일즈\xB7외부 벤더\xB7글로벌 조직과 협업해 완결된 결과물을 만들어 냅니다.",
-        },
-      ],
     },
     featuredBooks: {
       eyebrow: "출간 도서",
@@ -173,15 +120,6 @@ const t = {
       speaking: "강연 \xB7 강의",
       mentoring: "멘토링",
       campaign: "캠페인 \xB7 출판 \xB7 커뮤니티",
-    },
-    aboutPage: {
-      eyebrow: "프로필",
-      title: "프로필",
-      career: "핵심 이력",
-      education: "학력",
-      channels: "운영 채널",
-      strengths: "강점 (Gallup)",
-      competencies: "핵심 역량",
     },
     footer: {
       tagline:
