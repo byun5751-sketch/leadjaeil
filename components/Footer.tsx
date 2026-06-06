@@ -34,7 +34,7 @@ export function Footer({ lang }: { lang: Lang }) {
                 </svg>
               </a>
               <a
-                href="https://open.kakao.com/me/JaeilByun"
+                href="https://open.kakao.com/o/sypM9TBh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-text-secondary transition-colors hover:border-accent hover:text-accent"
@@ -92,14 +92,14 @@ export function Footer({ lang }: { lang: Lang }) {
                 </li>
                 <li>
                   <a
-                    href="https://open.kakao.com/me/JaeilByun"
+                    href="https://open.kakao.com/o/sypM9TBh"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-text-secondary hover:text-text"
                   >
                     KakaoTalk
                   </a>
-                  <p className="mt-0.5 text-xs text-text-tertiary">open.kakao.com/me/JaeilByun</p>
+                  <p className="mt-0.5 text-xs text-text-tertiary">open.kakao.com/o/sypM9TBh</p>
                 </li>
               </ul>
             </div>

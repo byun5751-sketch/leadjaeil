@@ -172,7 +172,7 @@ export default async function HomePage({
               {t.cta.linkedin}
             </a>
             <a
-              href="https://open.kakao.com/me/JaeilByun"
+              href="https://open.kakao.com/o/sypM9TBh"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-white/30 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white/10"

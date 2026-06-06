@@ -12,7 +12,7 @@ export function JsonLd() {
     image: "https://image.yes24.com/goods/178728770/XL",
     sameAs: [
       "https://www.linkedin.com/in/brasleybyun/",
-      "https://open.kakao.com/me/JaeilByun",
+      "https://open.kakao.com/o/sypM9TBh",
     ],
     alumniOf: {
       "@type": "CollegeOrUniversity",
@@ -56,7 +56,7 @@ export function JsonLd() {
       "@type": "ContactPoint",
       contactType: "business",
       email: "leadjaeil@gmail.com",
-      url: "https://open.kakao.com/me/JaeilByun",
+      url: "https://open.kakao.com/o/sypM9TBh",
     },
   };
 
