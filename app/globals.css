@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #FAF9F7;
+  --surface: #FFFFFF;
+  --surface-warm: #F5F3F0;
+  --border: #E8E5E0;
+  --border-strong: #D4D0CA;
+  --text: #1A1714;
+  --text-secondary: #6B6560;
+  --text-tertiary: #9C9690;
+  --accent: #8B7355;
+  --accent-light: #B8A48A;
+  --accent-bg: #F0EBE4;
+  --highlight: #2C2520;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-warm: var(--surface-warm);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-bg: var(--accent-bg);
+  --color-highlight: var(--highlight);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-dm-serif);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-shell {
+  width: calc(100% - 40px);
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1023px) {
+  .site-shell {
+    width: calc(100% - 32px);
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-shell {
+    width: calc(100% - 24px);
+  }
+}
+
+::selection { background: rgba(139,115,85,0.15); }
