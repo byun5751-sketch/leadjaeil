@@ -15,7 +15,7 @@ export async function generateMetadata({
   const description =
     lang === "ko"
       ? "리드제일 외부 강연, 멘토링, 마케팅 캠페인 경험"
-      : "Brasley Byun speaking events, mentoring, and marketing campaigns";
+      : "Lead Jaeil speaking events, mentoring, and marketing campaigns";
   return { title, description };
 }
 

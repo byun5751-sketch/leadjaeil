@@ -14,16 +14,16 @@ const SITE_URL = "https://leadjaeil.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "리드제일 (Brasley Byun) | 링크드인 전략가 \xB7 작가 \xB7 BD 전문가",
-    template: "%s | 리드제일 (Brasley Byun)",
+    default: "리드제일 (Lead Jaeil) | 링크드인 크리에이터 \xB7 작가",
+    template: "%s | 리드제일 (Lead Jaeil)",
   },
   description:
-    "링크드인 팔로워 2만+, 전체 채널 3만+ 크리에이터이자 파비콘(Favikon) 선정 국내 유일 링크드인 앰버서더 리드제일 공식 사이트. 『된다! 링크드인 활용법』 저자, 링크드인 전략가.",
+    "링크드인 팔로워 2만+, 전체 채널 3만+ 크리에이터이자 파비콘(Favikon) 선정 국내 유일 링크드인 앰버서더 리드제일 공식 사이트. 『된다! 링크드인 활용법』 저자, 링크드인 크리에이터.",
   keywords: [
     "리드제일",
-    "Brasley Byun",
+    "Lead Jaeil",
     "리드재일",
-    "링크드인 전략가",
+    "링크드인 크리에이터",
     "링크드인 앰버서더",
     "된다 링크드인 활용법",
     "퍼스널 브랜딩",
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    siteName: "리드제일 (Brasley Byun)",
+    siteName: "리드제일 (Lead Jaeil)",
     locale: "ko_KR",
     alternateLocale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "리드제일 (Brasley Byun) | 링크드인 전략가",
+    title: "리드제일 (Lead Jaeil) | 링크드인 크리에이터",
     description:
       "링크드인 팔로워 2만+, 전체 채널 3만+ 크리에이터. 파비콘 선정 국내 유일 링크드인 앰버서더, 『된다! 링크드인 활용법』 저자.",
   },

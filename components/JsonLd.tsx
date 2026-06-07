@@ -3,8 +3,8 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "리드제일",
-    alternateName: ["Brasley Byun", "리드재일"],
-    jobTitle: "링크드인 전략가 \xB7 작가",
+    alternateName: ["Lead Jaeil", "Brasley Byun", "리드재일"],
+    jobTitle: "링크드인 크리에이터 \xB7 작가",
     description:
       "파비콘(Favikon) 선정 국내 유일 링크드인 앰버서더. 링크드인 팔로워 2만+, 전체 채널 3만+ 크리에이터이자 『된다! 링크드인 활용법』 저자.",
     email: "mailto:leadjaeil@gmail.com",

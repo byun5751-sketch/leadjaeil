@@ -11,7 +11,7 @@ export function Footer({ lang }: { lang: Lang }) {
         <div className="flex flex-col gap-12 md:flex-row md:justify-between">
           <div className="max-w-sm">
             <p className="font-serif text-2xl text-text">
-              {lang === "ko" ? "리드제일" : "Brasley Byun"}
+              {lang === "ko" ? "리드제일" : "Lead Jaeil"}
             </p>
             <p className="mt-4 text-sm leading-relaxed text-text-secondary">
               {t.footer.tagline}

@@ -44,9 +44,9 @@ export type Career = {
 export const books: Book[] = [
   {
     slug: "linkedin-playbook",
-    title: "LinkedIn Playbook",
+    title: "It works! LinkedIn",
     subtitle: "Make your ordinary career shine on LinkedIn",
-    author: "Brasley Byun",
+    author: "Lead Jaeil",
     publisher: "Easys Publishing",
     publishDate: "2026-03-24",
     pages: 296,
@@ -74,7 +74,7 @@ export const books: Book[] = [
     slug: "still-commuting",
     title: "We're Still Commuting",
     subtitle: "A survival story of two professionals at a startup and a global company",
-    author: "Brasley Byun",
+    author: "Lead Jaeil",
     coAuthor: "Junhyeok Lee",
     publisher: "Joeunttang",
     publishDate: "2025-10-31",
@@ -214,7 +214,7 @@ export const activities: Activity[] = [
   },
   {
     slug: "linkedin-playbook-campaign",
-    title: "LinkedIn Playbook Integrated Marketing Campaign",
+    title: "It works! LinkedIn Integrated Marketing Campaign",
     type: "campaign",
     date: "2026.01-03",
     summary:

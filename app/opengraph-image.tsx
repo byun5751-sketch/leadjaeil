@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
-export const alt = "리드제일 (Brasley Byun) - 링크드인 전략가";
+export const alt = "리드제일 (Lead Jaeil) - 링크드인 크리에이터";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -57,7 +57,7 @@ export default function OGImage() {
               color: "#8B7355",
             }}
           >
-            링크드인 전략가 · 작가 · Brasley Byun
+            링크드인 크리에이터 · 작가 · Lead Jaeil
           </div>
           <div
             style={{

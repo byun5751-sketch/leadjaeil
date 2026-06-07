@@ -14,8 +14,8 @@ const t = {
     },
     hero: {
       status: "Favikon-selected LinkedIn Ambassador in Korea",
-      name: "Brasley Byun",
-      role: "LinkedIn Strategist / Author / BD Professional",
+      name: "Lead Jaeil",
+      role: "LinkedIn Creator / Author",
       tagline:
         "From an ordinary college student to a global company employee, LinkedIn creator with 20K+ followers, and author of two books. This is the record of that journey.",
       cta1: "View Books",
@@ -78,7 +78,7 @@ const t = {
     hero: {
       status: "파비콘(Favikon) 선정 국내 유일 링크드인 앨버서더",
       name: "리드제일",
-      role: "링크드인 전략가 \xB7 작가 \xB7 비즈니스 개발 전문가",
+      role: "링크드인 크리에이터 \xB7 작가",
       tagline:
         "평범한 대학생에서 시작해 링크드인 하나로 글로벌 기업 3곳에 취업하고, 2만여 명의 팔로워를 둔 크리에이터이자 두 권의 책을 낸 작가가 되기까지의 기록입니다.",
       cta1: "저서 보기",

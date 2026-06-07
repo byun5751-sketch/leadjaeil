@@ -23,7 +23,7 @@ export function Header({ lang }: { lang: Lang }) {
     <header className="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur-lg">
       <nav className="site-shell flex h-16 items-center justify-between gap-5">
         <Link href={`/${lang}`} className="font-serif text-xl text-text">
-          {lang === "ko" ? "리드제일" : "Brasley Byun"}
+          {lang === "ko" ? "리드제일" : "Lead Jaeil"}
         </Link>
 
         <ul className="hidden items-center gap-1 rounded-full border border-border bg-surface px-1.5 py-1 sm:flex">

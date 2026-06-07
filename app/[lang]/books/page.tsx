@@ -15,7 +15,7 @@ export async function generateMetadata({
   const description =
     lang === "ko"
       ? "리드제일 저서 소개 -- 『된다! 링크드인 활용법』, 『우리는 아직도 출근 중입니다』"
-      : "Books by Brasley Byun -- LinkedIn Playbook, We're Still Commuting";
+      : "Books by Lead Jaeil -- It works! LinkedIn, We're Still Commuting";
   return { title, description };
 }
 
