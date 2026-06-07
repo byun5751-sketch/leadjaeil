@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | 리드제일 (Brasley Byun)",
   },
   description:
-    "팔로워 2만+ 링크드인 크리에이터이자 파비콘(Favikon) 선정 국내 유일 링크드인 앰버서더 리드제일의 공식 포트폴리오. 『된다! 링크드인 활용법』 저자, 비즈니스 개발(BD) 전문가.",
+    "링크드인 팔로워 2만+, 전체 채널 3만+ 크리에이터이자 파비콘(Favikon) 선정 국내 유일 링크드인 앰버서더 리드제일 공식 사이트. 『된다! 링크드인 활용법』 저자, 링크드인 전략가.",
   keywords: [
     "리드제일",
     "Brasley Byun",
@@ -36,10 +36,10 @@ export const metadata: Metadata = {
     alternateLocale: "en_US",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "리드제일 (Brasley Byun) | 링크드인 전략가",
     description:
-      "팔로워 2만+ 링크드인 크리에이터, 파비콘 선정 국내 유일 링크드인 앰버서더, 『된다! 링크드인 활용법』 저자.",
+      "링크드인 팔로워 2만+, 전체 채널 3만+ 크리에이터. 파비콘 선정 국내 유일 링크드인 앰버서더, 『된다! 링크드인 활용법』 저자.",
   },
   robots: {
     index: true,
