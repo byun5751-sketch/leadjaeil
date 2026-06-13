@@ -16,7 +16,18 @@ export async function generateMetadata({
   const { lang } = await params;
   return {
     openGraph: {
+      type: "website",
+      siteName: "리드제일 (Lead Jaeil)",
       locale: lang === "ko" ? "ko_KR" : "en_US",
+      alternateLocale: lang === "ko" ? "en_US" : "ko_KR",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "리드제일 (Lead Jaeil) - 링크드인 크리에이터",
+        },
+      ],
     },
   };
 }

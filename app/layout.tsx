@@ -34,12 +34,21 @@ export const metadata: Metadata = {
     siteName: "리드제일 (Lead Jaeil)",
     locale: "ko_KR",
     alternateLocale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "리드제일 (Lead Jaeil) - 링크드인 크리에이터",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "리드제일 (Lead Jaeil) | 링크드인 크리에이터",
     description:
       "링크드인 팔로워 2만+, 전체 채널 3만+ 크리에이터. 파비콘 선정 국내 유일 링크드인 앰버서더, 『된다! 링크드인 활용법』 저자.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
