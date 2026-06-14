@@ -9,7 +9,7 @@ const dmSerif = DM_Serif_Display({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://leadjaeil.vercel.app";
+const SITE_URL = "https://leadjaeil.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

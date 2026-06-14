@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://leadjaeil.vercel.app";
+const SITE_URL = "https://leadjaeil.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["en", "ko"];

@@ -8,7 +8,7 @@ export function JsonLd() {
     description:
       "파비콘(Favikon) 선정 국내 유일 링크드인 앰버서더. 링크드인 팔로워 2만+, 전체 채널 3만+ 크리에이터이자 『된다! 링크드인 활용법』 저자.",
     email: "mailto:leadjaeil@gmail.com",
-    url: "https://leadjaeil.vercel.app/",
+    url: "https://leadjaeil.com/",
     image: "https://image.yes24.com/goods/178728770/XL",
     sameAs: [
       "https://www.linkedin.com/in/lifesightseeing/",
