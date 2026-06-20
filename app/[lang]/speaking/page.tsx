@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mic, Users, TrendingUp } from "lucide-react";
+import { Mic, Users, TrendingUp, ChevronDown } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 import { getData } from "@/lib/get-data";
@@ -27,28 +27,36 @@ function ActivityCard({
   lang: Lang;
 }) {
   return (
-    <article className="rounded-xl border border-border bg-surface p-6">
-      <div className="flex items-start justify-between gap-4">
+    <details className="group rounded-xl border border-border bg-surface">
+      <summary className="flex cursor-pointer list-none items-start justify-between gap-4 p-6">
         <h3 className="font-semibold text-text">{activity.title}</h3>
-        <span className="shrink-0 text-xs text-text-tertiary">{activity.date}</span>
+        <span className="flex shrink-0 items-center gap-3">
+          <span className="text-xs text-text-tertiary">{activity.date}</span>
+          <ChevronDown
+            size={16}
+            className="text-text-tertiary transition-transform duration-200 group-open:rotate-180"
+          />
+        </span>
+      </summary>
+      <div className="px-6 pb-6">
+        {activity.audience && (
+          <p className="text-xs text-accent">
+            {lang === "ko" ? "규모" : "Audience"}: {activity.audience}
+          </p>
+        )}
+        <p className="mt-3 text-sm leading-relaxed text-text-secondary">{activity.summary}</p>
+        {activity.highlights.length > 0 && (
+          <ul className="mt-4 space-y-1.5">
+            {activity.highlights.map((h, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
+                <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
+                {h}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-      {activity.audience && (
-        <p className="mt-1 text-xs text-accent">
-          {lang === "ko" ? "규모" : "Audience"}: {activity.audience}
-        </p>
-      )}
-      <p className="mt-3 text-sm leading-relaxed text-text-secondary">{activity.summary}</p>
-      {activity.highlights.length > 0 && (
-        <ul className="mt-4 space-y-1.5">
-          {activity.highlights.map((h, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-              <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
-              {h}
-            </li>
-          ))}
-        </ul>
-      )}
-    </article>
+    </details>
   );
 }
 
@@ -61,9 +69,13 @@ export default async function SpeakingPage({
   const t = getTranslations(lang as Lang);
   const { activities } = getData(lang as Lang);
 
-  const speaking = activities.filter((a) => a.type === "speaking");
-  const mentoring = activities.filter((a) => a.type === "mentoring");
-  const campaigns = activities.filter((a) => a.type === "campaign");
+  // Sort newest first. Dates are "YYYY.MM" / "YYYY" strings, so lexicographic
+  // order matches chronological order; ranges sort by their start date.
+  const byDateDesc = (a: Activity, b: Activity) => b.date.localeCompare(a.date);
+
+  const speaking = activities.filter((a) => a.type === "speaking").sort(byDateDesc);
+  const mentoring = activities.filter((a) => a.type === "mentoring").sort(byDateDesc);
+  const campaigns = activities.filter((a) => a.type === "campaign").sort(byDateDesc);
 
   const sections = [
     { title: t.speakingPage.speaking, items: speaking, icon: Mic },

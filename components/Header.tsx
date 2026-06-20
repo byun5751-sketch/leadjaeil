@@ -1,13 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 
 export function Header({ lang }: { lang: Lang }) {
   const pathname = usePathname();
   const t = getTranslations(lang);
+  const [menuOpen, setMenuOpen] = useState(false);
   const koPath = pathname.replace(`/${lang}`, "/ko");
   const enPath = pathname.replace(`/${lang}`, "/en");
 
@@ -74,12 +77,59 @@ export function Header({ lang }: { lang: Lang }) {
           </div>
           <a
             href="#contact"
-            className="rounded-full bg-highlight px-4 py-1.5 text-[13px] font-medium text-white transition-colors hover:bg-text"
+            className="hidden rounded-full bg-highlight px-4 py-1.5 text-[13px] font-medium text-white transition-colors hover:bg-text sm:inline-block"
           >
             {t.nav.contact}
           </a>
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface text-text sm:hidden"
+          >
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
         </div>
       </nav>
+
+      {menuOpen && (
+        <div className="border-t border-border bg-bg sm:hidden">
+          <ul className="site-shell flex flex-col gap-1 py-3">
+            {links.map((link) => {
+              const active =
+                link.href === `/${lang}`
+                  ? pathname === `/${lang}`
+                  : pathname.startsWith(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`block rounded-lg px-3 py-2.5 text-sm transition-colors ${
+                      active
+                        ? "bg-accent-bg text-text font-medium"
+                        : "text-text-secondary hover:text-text"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+            <li className="mt-1">
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="block rounded-lg bg-highlight px-3 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-text"
+              >
+                {t.nav.contact}
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
