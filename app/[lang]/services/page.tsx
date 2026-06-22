@@ -50,7 +50,7 @@ const services = {
       ],
       cta: "챌린지 참여하기",
       url: "https://linkedinchallengeforyou.vercel.app/",
-      highlight: false,
+      highlight: true,
     },
     {
       slug: "open-chat",
@@ -103,7 +103,7 @@ const services = {
       ],
       cta: "Join the challenge",
       url: "https://linkedinchallengeforyou.vercel.app/",
-      highlight: false,
+      highlight: true,
     },
     {
       slug: "open-chat",
