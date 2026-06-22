@@ -36,6 +36,23 @@ const services = {
       highlight: true,
     },
     {
+      slug: "challenge",
+      badge: "CHALLENGE",
+      title: "5주 외국계 취업 챌린지",
+      subtitle: "링크드인으로 5주 만에 외국계 취업에 도전해요",
+      description:
+        "막연하게 미루던 외국계 취업, 5주 동안 단계별 미션으로 끝까지 완주해요. 링크드인 프로필 세팅부터 영문 이력서, 채용 담당자 컨택, 인터뷰 준비까지 매주 하나씩 실행하며 외국계 합격에 가까워지는 챌린지입니다.",
+      features: [
+        "5주 단계별 미션으로 끝까지 완주",
+        "링크드인 프로필 & 영문 이력서 완성",
+        "채용 담당자 컨택 및 네트워킹 실전",
+        "인터뷰 준비까지 매주 피드백",
+      ],
+      cta: "챌린지 참여하기",
+      url: "https://linkedinchallengeforyou.vercel.app/",
+      highlight: false,
+    },
+    {
       slug: "open-chat",
       badge: "FREE",
       title: "리드제일의 링크드인 공작소",
@@ -70,6 +87,23 @@ const services = {
       cta: "View workshop details",
       url: "https://linkedin-workshop.vercel.app/",
       highlight: true,
+    },
+    {
+      slug: "challenge",
+      badge: "CHALLENGE",
+      title: "5-Week Global Career Challenge",
+      subtitle: "Land a job at a global company in 5 weeks with LinkedIn",
+      description:
+        "Stop putting off your global career move. Over five weeks, step-by-step missions take you all the way through. From setting up your LinkedIn profile and English resume to reaching out to recruiters and prepping for interviews, you execute one mission each week and get closer to an offer.",
+      features: [
+        "Step-by-step missions over 5 weeks",
+        "Complete LinkedIn profile & English resume",
+        "Hands-on recruiter outreach and networking",
+        "Weekly feedback through interview prep",
+      ],
+      cta: "Join the challenge",
+      url: "https://linkedinchallengeforyou.vercel.app/",
+      highlight: false,
     },
     {
       slug: "open-chat",
