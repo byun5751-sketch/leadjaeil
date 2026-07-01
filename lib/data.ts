@@ -264,6 +264,20 @@ export const activities: Activity[] = [
       "Attendee satisfaction: 5.0/5.0",
     ],
   },
+  {
+    slug: "student-branding-cohort",
+    title: "Student Career Branding 4-Week Cohort Challenge",
+    type: "campaign",
+    date: "2026.05-06",
+    summary:
+      "Designed the first LinkedIn personal-branding 4-week cohort model for university students, leveraging my published book as a curriculum asset and defining a collaboration governance with external partners (e.g. Sangmyung Univ. club Momentum). Pivoted the entire curriculum amid overlapping holidays, festivals, and exam periods, and drove the decision to proceed offline to validate qualitative value despite cancellation risk.",
+    highlights: [
+      "First book-asset-based cohort model for students; optimized partnership governance",
+      "Sourced a venue near Gyodae Station directly, cutting rental costs ~30%",
+      "Ran a 3-part clinic (profile, resume linkage, content roadmap) for high-engagement participants",
+      "Turned the whole run into a post-mortem report, building a student-target VOC database",
+    ],
+  },
 ];
 
 export const channels: Channel[] = [
