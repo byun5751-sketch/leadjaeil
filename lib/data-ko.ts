@@ -201,7 +201,7 @@ export const activitiesKo: Activity[] = [
   {
     slug: "joint-book-talk",
     title: "합동 북토크 — '링크드인 X 스레드'",
-    type: "campaign",
+    type: "speaking",
     date: "2026",
     summary:
       "스레드 신간 동시 출간 정보를 포착해 합동 북토크를 직접 제안\xB7성사. 두 플랫폼 독자층 교차 유입과 비용 분담을 논거로 설득했고, 약 40명 대상 Q&A\xB7사인회까지 2시간 풀 운영했습니다.",
@@ -213,7 +213,7 @@ export const activitiesKo: Activity[] = [
   {
     slug: "ebook-reader-event",
     title: "전자책 출간 기념 독자 보은회",
-    type: "campaign",
+    type: "speaking",
     date: "2026.05",
     summary:
       "래피드(이벤트 플랫폼) 신청 동선과 카카오톡 오픈채팅을 활용해 53슬라이드 3파트 온라인 강연을 단독 기획\xB7운영. 사전 질문 20건을 12개 주제로 재구조화해 전량 응답했습니다.",
@@ -221,19 +221,6 @@ export const activitiesKo: Activity[] = [
       "53슬라이드, 3파트 구성",
       "20건 질문을 12개 주제로 재구조화",
       "참석자 만족도 5.0/5.0",
-    ],
-  },
-  {
-    slug: "careerday",
-    title: "Careerday — 콜드콜 기반 B2B 리드 발굴",
-    type: "campaign",
-    date: "2025.01~02",
-    summary:
-      "125개 잠재 기업 콜드콜로 75개사(60%) 담당자 연락처를 확보하고, 최종 3건의 비즈니스 미팅을 성사(전환율 12%)했습니다.",
-    highlights: [
-      "125개 콜드콜, 75개사 연락처 확보(60%)",
-      "3건 비즈니스 미팅 성사(12%)",
-      "부대 세미나에서 5,000뷰+ 콘텐츠 재가공",
     ],
   },
 ];

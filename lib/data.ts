@@ -242,7 +242,7 @@ export const activities: Activity[] = [
   {
     slug: "joint-book-talk",
     title: "Joint Book Talk: LinkedIn x Threads",
-    type: "campaign",
+    type: "speaking",
     date: "2026",
     summary:
       "Spotted a simultaneous Threads book release and proposed a joint book talk. Leveraged cross-audience synergy and cost-sharing as key arguments. Ran a 2-hour event with Q&A and signing for ~40 attendees.",
@@ -254,7 +254,7 @@ export const activities: Activity[] = [
   {
     slug: "ebook-reader-event",
     title: "E-book Launch Reader Appreciation Event",
-    type: "campaign",
+    type: "speaking",
     date: "2026.05",
     summary:
       "Planned and ran a solo online lecture (53 slides, 3 parts) using Rapid event platform and KakaoTalk open chat. Reorganized 20 pre-submitted questions into 12 themes and answered all of them.",
@@ -262,19 +262,6 @@ export const activities: Activity[] = [
       "53 slides, 3-part structure",
       "20 questions reorganized into 12 themes",
       "Attendee satisfaction: 5.0/5.0",
-    ],
-  },
-  {
-    slug: "careerday",
-    title: "Careerday: Cold-Call B2B Lead Generation",
-    type: "campaign",
-    date: "2025.01-02",
-    summary:
-      "Cold-called 125 potential companies, securing contacts at 75 (60%) and closing 3 business meetings (12% conversion). Created a side seminar that generated 5,000+ view content.",
-    highlights: [
-      "125 cold calls, 75 contacts (60%)",
-      "3 business meetings (12% conversion)",
-      "5,000+ view content from side seminar",
     ],
   },
 ];
