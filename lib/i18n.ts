@@ -17,7 +17,7 @@ const t = {
       name: "Lead Jaeil",
       role: "LinkedIn Creator / Author",
       tagline:
-        "From an ordinary college student to a global company employee, LinkedIn creator with 20K+ followers, and author of two books. This is the record of that journey.",
+        "From an ordinary college student to a global company employee, creator with 30K+ followers, and author of two books. This is the record of that journey.",
       cta1: "View Books",
       cta2: "Get in Touch",
     },
@@ -111,7 +111,7 @@ const t = {
       name: "리드제일",
       role: "링크드인 크리에이터 \xB7 작가",
       tagline:
-        "평범한 대학생에서 시작해 링크드인 하나로 글로벌 기업 3곳에 취업하고, 2만여 명의 팔로워를 둔 크리에이터이자 두 권의 책을 낸 작가가 되기까지의 기록입니다.",
+        "평범한 대학생에서 시작해 링크드인 하나로 글로벌 기업 3곳에 취업하고, 3만여 명의 팔로워를 둔 크리에이터이자 두 권의 책을 낸 작가가 되기까지의 기록입니다.",
       cta1: "저서 보기",
       cta2: "연락하기",
     },
@@ -185,7 +185,7 @@ const t = {
     },
     footer: {
       tagline:
-        "흉어진 정보를 구조화하고, 프로세스를 개선하며, 이해관계자를 조율해 실행 가능한 결과를 만듭니다.",
+        "흩어진 정보를 구조화하고, 프로세스를 개선하며, 이해관계자를 조율해 실행 가능한 결과를 만듭니다.",
       navigation: "페이지",
       contact: "연락처",
       builtWith: "Next.js와 Linear 디자인 시스템으로 제작되었습니다.",
