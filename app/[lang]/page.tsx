@@ -18,7 +18,7 @@ export default async function HomePage({
   // Icon and destination for each starting point, in the same order as
   // t.paths.items. Copy lives in i18n; only locale-independent bits are here.
   const pathTargets = [
-    { icon: Sprout, href: `/${lang}/services#open-chat` },
+    { icon: Sprout, href: `/${lang}/services` },
     { icon: Target, href: `/${lang}/services/career-challenge` },
     { icon: Briefcase, href: `/${lang}/services/linkedin-workshop` },
     { icon: Mic, href: `/${lang}/speaking` },
