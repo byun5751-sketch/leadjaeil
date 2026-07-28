@@ -237,7 +237,7 @@ export const servicePagesKo: ServicePage[] = [
         kind: "hero",
         badge: "5주 외국계 취업 스프린트",
         headline: "5주 만에 외국계 취업의",
-        headlineAccent: "현문을 연다",
+        headlineAccent: "관문을 연다",
         sub: "링크드인 전문가와 함께하는 취업 스프린트 프로그램.",
         stats: [
           { value: "22,000+", label: "링크드인 팔로워" },
