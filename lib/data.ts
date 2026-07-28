@@ -11,6 +11,8 @@ export type Book = {
   category: string;
   coverUrl: string;
   purchaseUrl: string;
+  /** Publisher blurb. Kept for reference; the books page shows `outcomes`
+   *  instead so the page stays scannable. */
   description: string;
   recommendFor: string[];
   /** What the book covers — its structure. */
@@ -96,6 +98,12 @@ export const books: Book[] = [
       "Two people working in completely different environments share their 'commutes.' One is a veteran PO who survived 13 years at startups, the other a junior at a global company. Between startup 'freedom and chaos' and global company 'structure and order,' they unpack the essence of work that transcends organizational form.",
     recommendFor: [],
     highlights: [],
+    outcomes: [
+      "Compare two opposite organizations in one book: startup autonomy and global-company structure",
+      "See how a 13-year startup PO and a first-year employee at a global company read the same problem differently",
+      "Work out what stays constant about the job no matter what shape the organization takes",
+      "Get a sense of what changes and what does not before moving between the two",
+    ],
     achievements: [
       "200+ cumulative copies sold",
       "Yes24 Management/Strategy #33",

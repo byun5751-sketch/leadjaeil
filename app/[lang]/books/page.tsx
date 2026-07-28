@@ -131,10 +131,6 @@ export default async function BooksPage({
                 </div>
               )}
 
-              <p className="mt-6 text-sm leading-relaxed text-text-secondary">
-                {book.description}
-              </p>
-
               {book.recommendFor.length > 0 && (
                 <div className="mt-6">
                   <h3 className="text-sm font-semibold text-text">{t.booksPage.recommend}</h3>
