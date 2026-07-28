@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, ExternalLink, Users, Briefcase } from "lucide-react";
+import { ArrowRight, BookOpen, ExternalLink, Sprout, Target, Briefcase, Mic } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 import { getData } from "@/lib/get-data";
@@ -14,6 +14,15 @@ export default async function HomePage({
   const { lang } = await params;
   const t = getTranslations(lang as Lang);
   const { books } = getData(lang as Lang);
+
+  // Icon and destination for each starting point, in the same order as
+  // t.paths.items. Copy lives in i18n; only locale-independent bits are here.
+  const pathTargets = [
+    { icon: Sprout, href: `/${lang}/services#open-chat` },
+    { icon: Target, href: `/${lang}/services#challenge` },
+    { icon: Briefcase, href: `/${lang}/services#workshop` },
+    { icon: Mic, href: `/${lang}/speaking` },
+  ];
 
   return (
     <>
@@ -82,48 +91,44 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* Quick Links */}
+      {/* Starting points */}
       <section className="border-b border-border">
-        <div className="site-shell py-16">
-          <div className="grid gap-4 md:grid-cols-2">
-            <Link
-              href={`/${lang}/links`}
-              className="group flex items-center gap-5 rounded-xl border border-border bg-surface p-6 transition-colors hover:border-accent-light"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-bg text-accent">
-                <Users size={22} />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-text group-hover:text-accent">
-                  {lang === "ko" ? "SNS 채널 모아보기" : "SNS Channels"}
-                </h3>
-                <p className="mt-1 text-sm text-text-secondary">
-                  {lang === "ko"
-                    ? "링크드인, 블로그, 뉴스레터 등 운영 채널 바로가기"
-                    : "LinkedIn, blog, newsletter and more"}
-                </p>
-              </div>
-              <ArrowRight size={18} className="shrink-0 text-text-tertiary transition-colors group-hover:text-accent" />
-            </Link>
-            <Link
-              href={`/${lang}/services`}
-              className="group flex items-center gap-5 rounded-xl border border-border bg-surface p-6 transition-colors hover:border-accent-light"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-bg text-accent">
-                <Briefcase size={22} />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-text group-hover:text-accent">
-                  {lang === "ko" ? "서비스 바로가기" : "Services"}
-                </h3>
-                <p className="mt-1 text-sm text-text-secondary">
-                  {lang === "ko"
-                    ? "링크드인 워크숍, 무료 오픈채팅방"
-                    : "LinkedIn workshop and free community"}
-                </p>
-              </div>
-              <ArrowRight size={18} className="shrink-0 text-text-tertiary transition-colors group-hover:text-accent" />
-            </Link>
+        <div className="site-shell py-16 md:py-20">
+          <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
+            {t.paths.eyebrow}
+          </p>
+          <h2 className="mt-2 font-serif text-3xl text-text">{t.paths.title}</h2>
+          <p className="mt-3 max-w-lg text-sm text-text-secondary">{t.paths.desc}</p>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {t.paths.items.map((item, i) => {
+              const { icon: Icon, href } = pathTargets[i];
+              return (
+                <Link
+                  key={item.situation}
+                  href={href}
+                  className="group flex flex-col rounded-xl border border-border bg-surface p-6 transition-colors hover:border-accent-light"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-bg text-accent">
+                      <Icon size={19} />
+                    </span>
+                    <p className="text-sm font-medium text-accent">{item.situation}</p>
+                  </div>
+                  <h3 className="mt-4 font-serif text-xl text-text group-hover:text-accent">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-secondary">{item.desc}</p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-accent">
+                    {item.cta}
+                    <ArrowRight
+                      size={14}
+                      className="transition-transform group-hover:translate-x-0.5"
+                    />
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

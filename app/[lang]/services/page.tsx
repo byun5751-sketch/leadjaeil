@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
-import type { Lang } from "@/lib/i18n";
 
 export async function generateMetadata({
   params,
@@ -152,7 +151,8 @@ export default async function ServicesPage({
         {items.map((service) => (
           <div
             key={service.slug}
-            className={`relative flex flex-col rounded-2xl border p-8 ${
+            id={service.slug}
+            className={`relative flex scroll-mt-24 flex-col rounded-2xl border p-8 ${
               service.highlight
                 ? "border-accent bg-surface shadow-sm"
                 : "border-border bg-surface"

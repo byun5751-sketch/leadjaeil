@@ -27,6 +27,37 @@ const t = {
       books: "Books Published",
       events: "Speaking Events",
     },
+    paths: {
+      eyebrow: "Start Here",
+      title: "Your LinkedIn starting point",
+      desc: "Four paths, depending on where you are right now. Pick the one that sounds like you.",
+      items: [
+        {
+          situation: "If you're just getting started",
+          title: "LinkedIn Lab (free)",
+          desc: "A free open chat where you can ask anything before spending a won. Pairs well with the book if you want a structured walkthrough.",
+          cta: "Join the free community",
+        },
+        {
+          situation: "If you're aiming for a global company",
+          title: "5-Week Global Career Challenge",
+          desc: "Profile, English resume, recruiter outreach, interview prep. One mission a week until you get there.",
+          cta: "See the challenge",
+        },
+        {
+          situation: "If you want business opportunities",
+          title: "LinkedIn Workshop",
+          desc: "Done-with-you sessions covering profile optimization, content strategy, and your first posts, built together.",
+          cta: "See the workshop",
+        },
+        {
+          situation: "If you're looking for a speaker",
+          title: "Speaking & Lectures",
+          desc: "Conference talks, company lectures, and university sessions. Browse past events, then send an inquiry.",
+          cta: "See speaking history",
+        },
+      ],
+    },
     featuredBooks: {
       eyebrow: "Published Works",
       title: "Books",
@@ -89,6 +120,37 @@ const t = {
       views: "누적 조회수",
       books: "출간 도서",
       events: "강연 횟수",
+    },
+    paths: {
+      eyebrow: "시작점 찾기",
+      title: "내 상황에 맞는 링크드인 시작점",
+      desc: "지금 어디쯤 계신지에 따라 네 갈래로 나눴습니다. 가장 가까운 쪽을 골라보세요.",
+      items: [
+        {
+          situation: "처음 시작한다면",
+          title: "링크드인 공작소 (무료)",
+          desc: "돈 쓰기 전에 먼저 물어보는 무료 오픈채팅방입니다. 순서대로 배우고 싶다면 저서와 함께 보시면 좋습니다.",
+          cta: "무료로 참여하기",
+        },
+        {
+          situation: "외국계 취업을 준비한다면",
+          title: "5주 외국계 취업 챌린지",
+          desc: "프로필, 영문 이력서, 채용 담당자 컨택, 인터뷰 준비까지. 매주 미션 하나씩 실행합니다.",
+          cta: "챌린지 살펴보기",
+        },
+        {
+          situation: "비즈니스 기회를 만들고 싶다면",
+          title: "링크드인 워크숍",
+          desc: "프로필 최적화부터 콘텐츠 전략, 첫 게시글까지 옆에서 함께 만드는 프리미엄 워크숍입니다.",
+          cta: "워크숍 살펴보기",
+        },
+        {
+          situation: "강연자를 찾는다면",
+          title: "강연 \xB7 강의",
+          desc: "컨퍼런스, 사내 강연, 대학 특강 경험이 있습니다. 지난 강연을 확인하고 문의를 남겨주세요.",
+          cta: "강연 이력 보기",
+        },
+      ],
     },
     featuredBooks: {
       eyebrow: "출간 도서",
