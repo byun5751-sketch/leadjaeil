@@ -13,7 +13,10 @@ export type Book = {
   purchaseUrl: string;
   description: string;
   recommendFor: string[];
+  /** What the book covers — its structure. */
   highlights: string[];
+  /** What the reader can do after finishing it. Shown as a checklist. */
+  outcomes?: string[];
   achievements?: string[];
 };
 
@@ -68,6 +71,13 @@ export const books: Book[] = [
       "Connection techniques: 1st-degree request messages, coffee chat request methods (200+ personal experience)",
       "Writing strategy: 6 popular topic types, 100 topic ideas, bilingual and OSMU distribution",
       "AI tools: ChatGPT drafts, Claude translations, Google AI Studio analysis",
+    ],
+    outcomes: [
+      "Finish your profile end to end — photo, banner, headline, and role descriptions — by following the screenshots",
+      "Pick the strategy that matches your situation from eight reader types: student, job seeker, employee, solopreneur, and more",
+      "Use connection requests and coffee chat messages that do not get ignored, copied straight from the book",
+      "Keep 100 post ideas on hand for the days you have no idea what to write",
+      "Cut the time a post takes by drafting with ChatGPT and translating with Claude",
     ],
   },
   {

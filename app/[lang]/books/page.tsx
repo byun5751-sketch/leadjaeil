@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, Check, ExternalLink } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 import { getData } from "@/lib/get-data";
@@ -27,6 +28,13 @@ export default async function BooksPage({
   const { lang } = await params;
   const t = getTranslations(lang as Lang);
   const { books } = getData(lang as Lang);
+
+  // Destinations for t.booksNext.items, in the same order.
+  const nextSteps = [
+    { href: "https://www.latpeed.com/products/wKUZY", external: true },
+    { href: `/${lang}/services/career-challenge`, external: false },
+    { href: `/${lang}/services/linkedin-workshop`, external: false },
+  ];
 
   return (
     <div className="site-shell py-16 md:py-24">
@@ -104,6 +112,25 @@ export default async function BooksPage({
                 </div>
               </div>
 
+              {book.outcomes && book.outcomes.length > 0 && (
+                <div className="mt-6 rounded-xl bg-surface-warm p-6">
+                  <h3 className="text-sm font-semibold text-text">
+                    {t.booksPage.outcomes}
+                  </h3>
+                  <ul className="mt-3 space-y-2.5">
+                    {book.outcomes.map((o, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2.5 text-sm leading-relaxed text-text-secondary"
+                      >
+                        <Check size={15} className="mt-1 shrink-0 text-accent" />
+                        {o}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               <p className="mt-6 text-sm leading-relaxed text-text-secondary">
                 {book.description}
               </p>
@@ -163,6 +190,58 @@ export default async function BooksPage({
           </article>
         ))}
       </div>
+
+      <section className="mt-20">
+        <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
+          {t.booksNext.eyebrow}
+        </p>
+        <h2 className="mt-2 font-serif text-3xl text-text">{t.booksNext.title}</h2>
+        <p className="mt-3 max-w-xl text-sm text-text-secondary">{t.booksNext.desc}</p>
+
+        <ol className="mt-10 grid gap-4 md:grid-cols-3">
+          {t.booksNext.items.map((item, i) => {
+            const { href, external } = nextSteps[i];
+            const body = (
+              <>
+                <span className="font-serif text-2xl text-accent">{i + 1}</span>
+                <h3 className="mt-3 font-semibold text-text group-hover:text-accent">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                  {item.desc}
+                </p>
+                <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-accent">
+                  {item.cta}
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform group-hover:translate-x-0.5"
+                  />
+                </span>
+              </>
+            );
+            const cls =
+              "group flex flex-col rounded-xl border border-border bg-surface p-6 transition-colors hover:border-accent-light";
+            return (
+              <li key={item.title} className="flex">
+                {external ? (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${cls} w-full`}
+                  >
+                    {body}
+                  </a>
+                ) : (
+                  <Link href={href} className={`${cls} w-full`}>
+                    {body}
+                  </Link>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </section>
     </div>
   );
 }

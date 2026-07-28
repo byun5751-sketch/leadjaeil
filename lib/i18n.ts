@@ -78,8 +78,31 @@ const t = {
       details: "Details",
       recommend: "Recommended for",
       highlights: "Key Highlights",
+      outcomes: "What you get from this book",
       achievements: "Achievements",
       purchase: "Purchase on Yes24",
+    },
+    booksNext: {
+      eyebrow: "Next step",
+      title: "After the book",
+      desc: "The book gets you started on your own. When you want someone looking over your shoulder, here is where to go next.",
+      items: [
+        {
+          title: "Ask in the LinkedIn Lab",
+          desc: "Stuck on something the book did not cover? Ask in the free open chat. Nothing to pay, nothing to prepare.",
+          cta: "Join for free",
+        },
+        {
+          title: "Run it as a 5-week challenge",
+          desc: "This book is the course text for the challenge. Weekly missions and feedback take you from profile to recruiter outreach.",
+          cta: "See the challenge",
+        },
+        {
+          title: "Have it written with you",
+          desc: "If reading and doing it yourself is not moving fast enough, we write your headline and About section together in one session.",
+          cta: "See the workshop",
+        },
+      ],
     },
     speakingPage: {
       eyebrow: "Speaking & Activities",
@@ -172,8 +195,31 @@ const t = {
       details: "상세 정보",
       recommend: "추천 대상",
       highlights: "핵심 구성",
+      outcomes: "이 책으로 얻을 수 있는 것",
       achievements: "성과 \xB7 기록",
       purchase: "예스24에서 보기",
+    },
+    booksNext: {
+      eyebrow: "다음 단계",
+      title: "책을 읽은 다음은",
+      desc: "책은 혼자 시작하는 데까지를 도와드립니다. 옆에서 봐줄 사람이 필요해지는 지점부터는 이렇게 이어집니다.",
+      items: [
+        {
+          title: "공작소에서 물어보기",
+          desc: "책에 없던 부분이 막힌다면 무료 오픈채팅방에서 물어보세요. 비용도, 준비물도 없습니다.",
+          cta: "무료로 참여하기",
+        },
+        {
+          title: "5주 챌린지로 완주하기",
+          desc: "이 책이 챌린지의 교재입니다. 매주 미션과 피드백으로 프로필부터 채용 담당자 컨택까지 밀고 나갑니다.",
+          cta: "챌린지 보기",
+        },
+        {
+          title: "옆에서 같이 써보기",
+          desc: "읽고 혼자 하는 속도가 답답하다면, 한 번의 세션에서 헤드라인과 About을 함께 완성합니다.",
+          cta: "워크숍 보기",
+        },
+      ],
     },
     speakingPage: {
       eyebrow: "외부 활동",
