@@ -1,6 +1,8 @@
 import type { Lang } from "./i18n";
 import { books, activities, channels, careers } from "./data";
 import { booksKo, activitiesKo, channelsKo, careersKo } from "./data-ko";
+import { servicePages } from "./service-pages";
+import { servicePagesKo } from "./service-pages-ko";
 
 export function getData(lang: Lang) {
   if (lang === "ko") {
@@ -17,4 +19,12 @@ export function getData(lang: Lang) {
     channels,
     careers,
   };
+}
+
+export function getServicePages(lang: Lang) {
+  return lang === "ko" ? servicePagesKo : servicePages;
+}
+
+export function getServicePage(lang: Lang, slug: string) {
+  return getServicePages(lang).find((page) => page.slug === slug);
 }

@@ -19,8 +19,8 @@ export default async function HomePage({
   // t.paths.items. Copy lives in i18n; only locale-independent bits are here.
   const pathTargets = [
     { icon: Sprout, href: `/${lang}/services#open-chat` },
-    { icon: Target, href: `/${lang}/services#challenge` },
-    { icon: Briefcase, href: `/${lang}/services#workshop` },
+    { icon: Target, href: `/${lang}/services/career-challenge` },
+    { icon: Briefcase, href: `/${lang}/services/linkedin-workshop` },
     { icon: Mic, href: `/${lang}/speaking` },
   ];
 

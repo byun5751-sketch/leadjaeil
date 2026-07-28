@@ -4,7 +4,15 @@ const SITE_URL = "https://leadjaeil.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["en", "ko"];
-  const routes = ["", "/books", "/speaking", "/services", "/links"];
+  const routes = [
+    "",
+    "/books",
+    "/speaking",
+    "/services",
+    "/services/linkedin-workshop",
+    "/services/career-challenge",
+    "/links",
+  ];
 
   return locales.flatMap((lang) =>
     routes.map((route) => ({

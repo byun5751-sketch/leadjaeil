@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export async function generateMetadata({
@@ -15,7 +16,22 @@ export async function generateMetadata({
   return { title, description };
 }
 
-const services = {
+type Service = {
+  slug: string;
+  badge: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  features: string[];
+  cta: string;
+  highlight: boolean;
+  /** Slug of an on-site detail page under /[lang]/services/. */
+  detail?: string;
+  /** External destination, used when there is no detail page. */
+  url?: string;
+};
+
+const services: { ko: Service[]; en: Service[] } = {
   ko: [
     {
       slug: "workshop",
@@ -31,7 +47,7 @@ const services = {
         "워크숍 후 피드백 및 후속 관리",
       ],
       cta: "워크숍 상세 보기",
-      url: "https://linkedin-workshop.vercel.app/",
+      detail: "linkedin-workshop",
       highlight: true,
     },
     {
@@ -47,8 +63,8 @@ const services = {
         "채용 담당자 컨택 및 네트워킹 실전",
         "인터뷰 준비까지 매주 피드백",
       ],
-      cta: "챌린지 참여하기",
-      url: "https://linkedinchallengeforyou.vercel.app/",
+      cta: "챌린지 상세 보기",
+      detail: "career-challenge",
       highlight: true,
     },
     {
@@ -84,7 +100,7 @@ const services = {
         "Post-workshop feedback and follow-up",
       ],
       cta: "View workshop details",
-      url: "https://linkedin-workshop.vercel.app/",
+      detail: "linkedin-workshop",
       highlight: true,
     },
     {
@@ -100,8 +116,8 @@ const services = {
         "Hands-on recruiter outreach and networking",
         "Weekly feedback through interview prep",
       ],
-      cta: "Join the challenge",
-      url: "https://linkedinchallengeforyou.vercel.app/",
+      cta: "View challenge details",
+      detail: "career-challenge",
       highlight: true,
     },
     {
@@ -198,19 +214,24 @@ export default async function ServicesPage({
               ))}
             </ul>
 
-            <a
-              href={service.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors ${
+            {(() => {
+              const cls = `mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors ${
                 service.highlight
                   ? "bg-highlight text-white hover:bg-text"
                   : "border border-border bg-surface-warm text-text hover:border-accent-light hover:text-accent"
-              }`}
-            >
-              {service.cta}
-              <ArrowRight size={15} />
-            </a>
+              }`;
+              return service.detail ? (
+                <Link href={`/${lang}/services/${service.detail}`} className={cls}>
+                  {service.cta}
+                  <ArrowRight size={15} />
+                </Link>
+              ) : (
+                <a href={service.url} target="_blank" rel="noopener noreferrer" className={cls}>
+                  {service.cta}
+                  <ArrowRight size={15} />
+                </a>
+              );
+            })()}
           </div>
         ))}
       </div>
