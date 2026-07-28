@@ -17,8 +17,7 @@ export const metadata: Metadata = {
     default: "리드제일 (Lead Jaeil) | 링크드인 크리에이터 \xB7 작가",
     template: "%s | 리드제일 (Lead Jaeil)",
   },
-  description:
-    "링크드인 팔로워 2만+, 전체 채널 3만+ 크리에이터이자 파비콘(Favikon) 선정 국내 유일 링크드인 앰버서더 리드제일 공식 사이트. 『된다! 링크드인 활용법』 저자, 링크드인 크리에이터.",
+  description: "링크드인 브랜딩으로 커리어와 비즈니스 기회를 만드는 방법을 안내합니다.",
   keywords: [
     "리드제일",
     "Lead Jaeil",
@@ -46,8 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "리드제일 (Lead Jaeil) | 링크드인 크리에이터",
-    description:
-      "링크드인 팔로워 2만+, 전체 채널 3만+ 크리에이터. 파비콘 선정 국내 유일 링크드인 앰버서더, 『된다! 링크드인 활용법』 저자.",
+    description: "링크드인 브랜딩으로 커리어와 비즈니스 기회를 만드는 방법을 안내합니다.",
     images: ["/og-image.png"],
   },
   robots: {

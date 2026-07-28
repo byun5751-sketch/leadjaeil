@@ -114,7 +114,7 @@ const t = {
     },
     footer: {
       tagline:
-        "Structuring information, improving processes, and coordinating stakeholders to deliver actionable results.",
+        "Showing how to build career and business opportunities through LinkedIn branding.",
       navigation: "Navigation",
       contact: "Contact",
       builtWith: "Built with Next.js and the Linear design system.",
@@ -231,7 +231,7 @@ const t = {
     },
     footer: {
       tagline:
-        "흩어진 정보를 구조화하고, 프로세스를 개선하며, 이해관계자를 조율해 실행 가능한 결과를 만듭니다.",
+        "링크드인 브랜딩으로 커리어와 비즈니스 기회를 만드는 방법을 안내합니다.",
       navigation: "페이지",
       contact: "연락처",
       builtWith: "Next.js와 Linear 디자인 시스템으로 제작되었습니다.",
