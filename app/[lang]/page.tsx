@@ -51,7 +51,11 @@ export default async function HomePage({
                 {t.hero.name}
               </h1>
               <p className="mt-2 text-lg text-accent">{t.hero.role}</p>
-              <p className="mt-5 max-w-lg text-base leading-relaxed text-text-secondary">
+              {/* The brand line leads; the personal story supports it. */}
+              <p className="mt-5 max-w-lg text-lg leading-relaxed text-text">
+                {t.hero.brandLine}
+              </p>
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-text-secondary">
                 {t.hero.tagline}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">

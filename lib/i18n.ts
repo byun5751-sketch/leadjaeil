@@ -16,6 +16,8 @@ const t = {
       status: "Favikon-selected LinkedIn Ambassador in Korea",
       name: "Lead Jaeil",
       role: "LinkedIn Creator / Author",
+      brandLine:
+        "Showing how to build career and business opportunities through LinkedIn branding.",
       tagline:
         "From an ordinary college student to a global company employee, creator with 30K+ followers, and author of two books. This is the record of that journey.",
       cta1: "View Books",
@@ -149,9 +151,8 @@ const t = {
       tagline:
         "Showing how to build career and business opportunities through LinkedIn branding.",
       navigation: "Navigation",
-      contact: "Channels & contact",
-      snsHub: "All channels",
-      snsHubDesc: "LinkedIn, blog, newsletter, YouTube",
+      contact: "Contact",
+      snsButton: "All channels",
       builtWith: "Built with Next.js and the Linear design system.",
     },
   },
@@ -168,6 +169,7 @@ const t = {
       status: "파비콘(Favikon) 선정 국내 유일 링크드인 앨버서더",
       name: "리드제일",
       role: "링크드인 크리에이터 \xB7 작가",
+      brandLine: "링크드인 브랜딩으로 커리어와 비즈니스 기회를 만드는 방법을 안내합니다.",
       tagline:
         "평범한 대학생에서 시작해 링크드인 하나로 글로벌 기업 3곳에 취업하고, 3만여 명의 팔로워를 둔 크리에이터이자 두 권의 책을 낸 작가가 되기까지의 기록입니다.",
       cta1: "저서 보기",
@@ -301,9 +303,8 @@ const t = {
       tagline:
         "링크드인 브랜딩으로 커리어와 비즈니스 기회를 만드는 방법을 안내합니다.",
       navigation: "페이지",
-      contact: "채널 \xB7 연락처",
-      snsHub: "SNS 모음",
-      snsHubDesc: "링크드인, 블로그, 뉴스레터, 유튜브",
+      contact: "연락처",
+      snsButton: "SNS 바로가기",
       builtWith: "Next.js와 Linear 디자인 시스템으로 제작되었습니다.",
     },
   },

@@ -19,7 +19,6 @@ export function Header({ lang }: { lang: Lang }) {
     { href: `/${lang}/books`, label: t.nav.books },
     { href: `/${lang}/speaking`, label: t.nav.speaking },
     { href: `/${lang}/services`, label: t.nav.services },
-    { href: `/${lang}/links`, label: t.nav.links },
   ];
 
   return (

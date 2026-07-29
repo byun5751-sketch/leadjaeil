@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Share2 } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 
@@ -16,6 +16,19 @@ export function Footer({ lang }: { lang: Lang }) {
             <p className="mt-4 text-sm leading-relaxed text-text-secondary">
               {t.footer.tagline}
             </p>
+            {/* The channel hub is no longer in the top nav, so this button is
+                how visitors reach it. */}
+            <Link
+              href={`/${lang}/links`}
+              className="group mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-medium text-text transition-colors hover:border-accent-light hover:text-accent"
+            >
+              <Share2 size={15} />
+              {t.footer.snsButton}
+              <ArrowUpRight
+                size={14}
+                className="text-text-tertiary transition-colors group-hover:text-accent"
+              />
+            </Link>
           </div>
           <div className="flex gap-20">
             <div>
@@ -46,17 +59,6 @@ export function Footer({ lang }: { lang: Lang }) {
                 {t.footer.contact}
               </p>
               <ul className="mt-5 space-y-4">
-                <li>
-                  <Link
-                    href={`/${lang}/links`}
-                    className="text-sm text-text-secondary hover:text-text"
-                  >
-                    {t.footer.snsHub}
-                  </Link>
-                  <p className="mt-0.5 text-xs text-text-tertiary">
-                    {t.footer.snsHubDesc}
-                  </p>
-                </li>
                 <li>
                   <a
                     href="https://www.linkedin.com/in/brasleybyun/"
