@@ -131,48 +131,6 @@ export default async function BooksPage({
                 </div>
               )}
 
-              {book.recommendFor.length > 0 && (
-                <div className="mt-6">
-                  <h3 className="text-sm font-semibold text-text">{t.booksPage.recommend}</h3>
-                  <ul className="mt-2 space-y-1.5">
-                    {book.recommendFor.map((r, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-                        <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
-                        {r}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {book.highlights.length > 0 && (
-                <div className="mt-6">
-                  <h3 className="text-sm font-semibold text-text">{t.booksPage.highlights}</h3>
-                  <ul className="mt-2 space-y-1.5">
-                    {book.highlights.map((h, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-                        <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {book.achievements && book.achievements.length > 0 && (
-                <div className="mt-6">
-                  <h3 className="text-sm font-semibold text-text">{t.booksPage.achievements}</h3>
-                  <ul className="mt-2 space-y-1.5">
-                    {book.achievements.map((a, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-                        <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
-                        {a}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
               <a
                 href={book.purchaseUrl}
                 target="_blank"

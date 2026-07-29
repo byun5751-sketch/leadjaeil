@@ -11,14 +11,16 @@ export type Book = {
   category: string;
   coverUrl: string;
   purchaseUrl: string;
-  /** Publisher blurb. Kept for reference; the books page shows `outcomes`
-   *  instead so the page stays scannable. */
+  /** What the reader can do after finishing it. The only body copy the books
+   *  page renders — everything below is kept for reference but not shown. */
+  outcomes?: string[];
+  /** Publisher blurb. */
   description: string;
+  /** Who the book is aimed at. */
   recommendFor: string[];
   /** What the book covers — its structure. */
   highlights: string[];
-  /** What the reader can do after finishing it. Shown as a checklist. */
-  outcomes?: string[];
+  /** Sales and chart placements. */
   achievements?: string[];
 };
 
