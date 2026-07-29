@@ -4,6 +4,7 @@ import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 import { getData } from "@/lib/get-data";
 import type { Activity } from "@/lib/data";
+import { alternatesFor } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -16,7 +17,7 @@ export async function generateMetadata({
     lang === "ko"
       ? "리드제일 외부 강연, 멘토링, 마케팅 캠페인 경험"
       : "Lead Jaeil speaking events, mentoring, and marketing campaigns";
-  return { title, description };
+  return { title, description, alternates: alternatesFor(lang, "/speaking") };
 }
 
 function ActivityCard({

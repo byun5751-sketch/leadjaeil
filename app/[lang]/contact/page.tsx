@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Mail, MessageCircle } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
-import { SITE_URL, WEB3FORMS_ACCESS_KEY } from "@/lib/site";
+import { alternatesFor, SITE_URL, WEB3FORMS_ACCESS_KEY } from "@/lib/site";
 
 const KAKAO_URL = "https://open.kakao.com/o/sypM9TBh";
 const EMAIL_URL = "mailto:leadjaeil@gmail.com";
@@ -19,6 +19,7 @@ export async function generateMetadata({
     description: isKo
       ? "강연, 협업, 인터뷰, 워크숍 문의를 남겨주세요."
       : "Speaking, collaboration, interview, and workshop inquiries.",
+    alternates: alternatesFor(lang, "/contact"),
   };
 }
 

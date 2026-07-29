@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { Lang } from "@/lib/i18n";
+import { alternatesFor } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -12,7 +13,7 @@ export async function generateMetadata({
     lang === "ko"
       ? "리드제일의 소셜 미디어 채널 모음"
       : "Lead Jaeil's social media channels";
-  return { title, description };
+  return { title, description, alternates: alternatesFor(lang, "/links") };
 }
 
 const links = [

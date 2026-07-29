@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { alternatesFor } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -13,7 +14,7 @@ export async function generateMetadata({
     lang === "ko"
       ? "리드제일의 링크드인 서비스 -- 워크숍, 무료 오픈채팅방"
       : "Lead Jaeil's LinkedIn services -- workshop and free open chat";
-  return { title, description };
+  return { title, description, alternates: alternatesFor(lang, "/services") };
 }
 
 /**

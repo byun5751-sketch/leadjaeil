@@ -5,6 +5,7 @@ import { ArrowRight, Check, ExternalLink } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 import { getData } from "@/lib/get-data";
+import { alternatesFor } from "@/lib/site";
 
 export async function generateMetadata({
   params,
@@ -17,7 +18,7 @@ export async function generateMetadata({
     lang === "ko"
       ? "리드제일 저서 소개 -- 『된다! 링크드인 활용법』, 『우리는 아직도 출근 중입니다』"
       : "Books by Lead Jaeil -- It works! LinkedIn, We're Still Commuting";
-  return { title, description };
+  return { title, description, alternates: alternatesFor(lang, "/books") };
 }
 
 export default async function BooksPage({

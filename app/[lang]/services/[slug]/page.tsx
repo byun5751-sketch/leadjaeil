@@ -5,6 +5,7 @@ import { ArrowLeft, Check, ChevronDown, Mail, MessageCircle, X } from "lucide-re
 import type { Lang } from "@/lib/i18n";
 import { locales } from "@/lib/i18n";
 import { getServicePage, getServicePages } from "@/lib/get-data";
+import { alternatesFor } from "@/lib/site";
 import type { Block } from "@/lib/service-pages";
 
 const KAKAO_URL = "https://open.kakao.com/o/sypM9TBh";
@@ -27,13 +28,7 @@ export async function generateMetadata({
   return {
     title: page.metaTitle,
     description: page.metaDescription,
-    alternates: {
-      canonical: `/${lang}/services/${slug}`,
-      languages: {
-        ko: `/ko/services/${slug}`,
-        en: `/en/services/${slug}`,
-      },
-    },
+    alternates: alternatesFor(lang, `/services/${slug}`),
   };
 }
 

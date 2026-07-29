@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, DM_Serif_Display } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
@@ -8,8 +9,6 @@ const dmSerif = DM_Serif_Display({
   weight: "400",
   subsets: ["latin"],
 });
-
-const SITE_URL = "https://leadjaeil.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -53,13 +52,9 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
-  alternates: {
-    canonical: SITE_URL,
-    languages: {
-      en: "/en",
-      ko: "/ko",
-    },
-  },
+  // No `alternates` here on purpose: anything set at the root is inherited by
+  // every route below, so a canonical here would mark the whole site a
+  // duplicate of one URL. Each page sets its own via `alternatesFor`.
 };
 
 export default function RootLayout({
