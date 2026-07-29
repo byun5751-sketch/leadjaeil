@@ -75,12 +75,12 @@ export function Header({ lang }: { lang: Lang }) {
               EN
             </Link>
           </div>
-          <a
-            href="#contact"
+          <Link
+            href={`/${lang}/contact`}
             className="hidden rounded-full bg-highlight px-4 py-1.5 text-[13px] font-medium text-white transition-colors hover:bg-text sm:inline-block"
           >
             {t.nav.contact}
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -119,13 +119,13 @@ export function Header({ lang }: { lang: Lang }) {
               );
             })}
             <li className="mt-1">
-              <a
-                href="#contact"
+              <Link
+                href={`/${lang}/contact`}
                 onClick={() => setMenuOpen(false)}
                 className="block rounded-lg bg-highlight px-3 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-text"
               >
                 {t.nav.contact}
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

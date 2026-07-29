@@ -191,17 +191,9 @@ export default async function HomePage({
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
               href="mailto:leadjaeil@gmail.com"
-              className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-highlight transition-opacity hover:opacity-90"
-            >
-              {t.cta.email}
-            </a>
-            <a
-              href="https://www.linkedin.com/in/brasleybyun/"
-              target="_blank"
-              rel="noopener noreferrer"
               className="rounded-full border border-white/30 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white/10"
             >
-              {t.cta.linkedin}
+              {t.cta.email}
             </a>
             <a
               href="https://open.kakao.com/o/sypM9TBh"
@@ -212,6 +204,15 @@ export default async function HomePage({
               {t.cta.kakao}
             </a>
           </div>
+          <p className="mt-8 text-sm text-white/70">
+            {t.cta.formLead}{" "}
+            <Link
+              href={`/${lang}/contact`}
+              className="font-medium text-white underline underline-offset-4 transition-opacity hover:opacity-80"
+            >
+              {t.cta.formLink}
+            </Link>
+          </p>
         </div>
       </section>
     </>

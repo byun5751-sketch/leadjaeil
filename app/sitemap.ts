@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/linkedin-workshop",
     "/services/career-challenge",
     "/links",
+    "/contact",
   ];
 
   return locales.flatMap((lang) =>
