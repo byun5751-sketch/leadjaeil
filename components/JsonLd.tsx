@@ -13,7 +13,7 @@ export function JsonLd() {
     url: `${SITE_URL}/`,
     image: "https://image.yes24.com/goods/178728770/XL",
     sameAs: [
-      "https://www.linkedin.com/in/lifesightseeing/",
+      "https://www.linkedin.com/in/brasleybyun/",
       "https://blog.naver.com/lifesightseeing",
       "https://www.threads.com/@lifesightseeing",
       "https://maily.so/leadjaeil",

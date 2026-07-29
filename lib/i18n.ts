@@ -149,7 +149,9 @@ const t = {
       tagline:
         "Showing how to build career and business opportunities through LinkedIn branding.",
       navigation: "Navigation",
-      contact: "Contact",
+      contact: "Channels & contact",
+      snsHub: "All channels",
+      snsHubDesc: "LinkedIn, blog, newsletter, YouTube",
       builtWith: "Built with Next.js and the Linear design system.",
     },
   },
@@ -299,7 +301,9 @@ const t = {
       tagline:
         "링크드인 브랜딩으로 커리어와 비즈니스 기회를 만드는 방법을 안내합니다.",
       navigation: "페이지",
-      contact: "연락처",
+      contact: "채널 \xB7 연락처",
+      snsHub: "SNS 모음",
+      snsHubDesc: "링크드인, 블로그, 뉴스레터, 유튜브",
       builtWith: "Next.js와 Linear 디자인 시스템으로 제작되었습니다.",
     },
   },
