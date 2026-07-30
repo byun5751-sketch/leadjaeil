@@ -1,3 +1,5 @@
+export type ReviewStat = { value: string; label: string };
+
 export type Review = {
   slug: string;
   title: string;
@@ -8,13 +10,42 @@ export type Review = {
   attribution: string;
   /** Shown collapsed, so the card says something before it is opened. */
   pullQuote: string;
-  body: string[];
+  /** Prose reviews. Reproduced verbatim; absent on survey entries. */
+  body?: string[];
+  /** Survey results, for feedback that arrived as numbers rather than prose. */
+  stats?: ReviewStat[];
+  /** Sample size and any caveat. Required alongside `stats` so a percentage
+   *  is never shown without saying how many people it came from. */
+  sampleNote?: string;
   /** Set on translations so the page can say the words were not written in
    *  this language. Slugs must match reviews-ko.ts. */
   translated?: boolean;
 };
 
 export const reviews: Review[] = [
+  {
+    slug: "microsoft-ai-playground",
+    title: "\"LinkedIn social branding\" attendee survey",
+    event: "Microsoft AI Community, AI Playground",
+    date: "2026.07",
+    attribution: "Attendee survey, 5 responses",
+    pullQuote: "Every respondent said they would recommend it to a friend or colleague.",
+    translated: true,
+    stats: [
+      { value: "5.0 / 5.0", label: "Overall satisfaction" },
+      { value: "4 of 5", label: "Said it exceeded expectations" },
+      { value: "5 of 5", label: "Would recommend it (all promoters)" },
+      { value: "5 of 5", label: "Want to write a first post or a write-up" },
+      { value: "5 of 5", label: "Want to turn their experience into content" },
+      { value: "3 of 5", label: "Want to rework their profile first" },
+    ],
+    sampleNote:
+      "Five people responded. Read the numbers as an indication, not a measurement — the sample is small.",
+    body: [
+      "Asked what worked best, respondents picked the LinkedIn writing and branding session (4), the hands-on format and the venue and running of the event (3 each), and the speaker's own examples (2). Three of the five were attending this community's events for the first time.",
+      "Nobody selected \"I am not sure what to do first\" when asked what they wanted to do next.",
+    ],
+  },
   {
     slug: "twojobmate-5th-lecture",
     title: "Notes on the “Endless Challenge with LinkedIn” talk",

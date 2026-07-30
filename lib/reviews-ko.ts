@@ -6,6 +6,28 @@ import type { Review } from "./reviews";
  */
 export const reviewsKo: Review[] = [
   {
+    slug: "microsoft-ai-playground",
+    title: "[작은 놀이터] 'LinkedIn 소셜 브랜딩하기' 참석자 설문",
+    event: "Microsoft AI Community 'AI놀이터'",
+    date: "2026.07",
+    attribution: "참석자 설문 응답 5명",
+    pullQuote: "응답자 5명 전원이 주변에 추천하겠다고 답했습니다.",
+    stats: [
+      { value: "5.0 / 5.0", label: "전체 만족도" },
+      { value: "5명 중 4명", label: "기대 이상이었다" },
+      { value: "5명 중 5명", label: "추천 의향 — 전원 프로모터" },
+      { value: "5명 중 5명", label: "첫 게시글이나 후기를 써보고 싶다" },
+      { value: "5명 중 5명", label: "내 경험을 콘텐츠 주제로 정리하고 싶다" },
+      { value: "5명 중 3명", label: "링크드인 프로필부터 정리하고 싶다" },
+    ],
+    sampleNote:
+      "응답 5명 기준입니다. 표본이 작아 측정값이라기보다 참고 지표로 봐주세요.",
+    body: [
+      "가장 좋았던 부분으로는 링크드인 글쓰기\xB7브랜딩 강의(4명), 실습형 구성과 행사 장소\xB7운영(각 3명), 연사의 사례 공유(2명)가 꼽혔습니다. 참석자 5명 중 3명은 이 커뮤니티 행사에 처음 참석했습니다.",
+      "행사 이후 하고 싶은 행동을 묻는 항목에서 '아직은 무엇부터 해야 할지 잘 모르겠다'를 고른 사람은 없었습니다.",
+    ],
+  },
+  {
     slug: "twojobmate-5th-lecture",
     title: "링크드인과 함께한, 무한도전! 특강 후기",
     event: "투잡연구소 투잡메이트 5번째 특강",

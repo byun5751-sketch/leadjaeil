@@ -73,10 +73,35 @@ export default async function ReviewsPage({
               </summary>
 
               <div className="border-t border-border px-6 pb-8 pt-6 md:px-8">
-                {review.body.map((paragraph, i) => (
+                {review.stats && (
+                  <>
+                    <dl className="grid gap-3 sm:grid-cols-2">
+                      {review.stats.map((stat) => (
+                        <div
+                          key={stat.label}
+                          className="rounded-xl bg-surface-warm px-5 py-4"
+                        >
+                          <dt className="text-xs text-text-tertiary">{stat.label}</dt>
+                          <dd className="mt-1 font-serif text-xl text-text">
+                            {stat.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                    {review.sampleNote && (
+                      <p className="mt-4 text-xs leading-relaxed text-text-tertiary">
+                        {review.sampleNote}
+                      </p>
+                    )}
+                  </>
+                )}
+
+                {review.body?.map((paragraph, i) => (
                   <p
                     key={i}
-                    className="mt-4 text-sm leading-[1.9] text-text-secondary first:mt-0"
+                    className={`text-sm leading-[1.9] text-text-secondary ${
+                      i === 0 && !review.stats ? "" : "mt-4"
+                    }`}
                   >
                     {paragraph}
                   </p>
