@@ -32,6 +32,10 @@ export type Activity = {
   audience?: string;
   summary: string;
   highlights: string[];
+  /** Shown up front on the speaking page. Reserved for in-person sessions,
+   *  which is what running a room actually demonstrates. Keep the same slugs
+   *  flagged in data-ko.ts. */
+  featured?: boolean;
 };
 
 export type Channel = {
@@ -130,6 +134,7 @@ export const activities: Activity[] = [
       "Finished on time at 80 minutes with nobody leaving, on a holiday morning",
       "Attendee survey (5 responses): 5.0 / 5.0 satisfaction, every respondent would recommend it",
     ],
+    featured: true,
   },
   {
     slug: "twojobmate-linkedin-lecture",
@@ -159,6 +164,7 @@ export const activities: Activity[] = [
       "Received 'Confident' and 'Impressive' feedback",
       "Proved global stage presentation skills",
     ],
+    featured: true,
   },
   {
     slug: "hyphencon",
@@ -173,6 +179,7 @@ export const activities: Activity[] = [
       "Compressed from 40 to 30 minutes",
       "Praised as 'packed like a full bowl of rice'",
     ],
+    featured: true,
   },
   {
     slug: "founders",

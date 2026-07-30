@@ -118,6 +118,9 @@ const t = {
       eyebrow: "Speaking & Activities",
       title: "Speaking & Activities",
       desc: "Conferences, lectures, mentoring, marketing campaigns, and community work since graduation.",
+      featured: "Selected talks",
+      featuredDesc:
+        "Three in-person sessions, picked because running a room is what they show.",
       speaking: "Speaking & Lectures",
       mentoring: "Mentoring",
       campaign: "Campaigns & Publishing",
@@ -276,6 +279,8 @@ const t = {
       eyebrow: "외부 활동",
       title: "강연 \xB7 활동",
       desc: "강연\xB7강의\xB7멘토링\xB7마케팅 캠페인\xB7커뮤니티 운영 경험.",
+      featured: "대표 강연",
+      featuredDesc: "현장 진행 역량이 드러나는 오프라인 세션 세 건입니다.",
       speaking: "강연 \xB7 강의",
       mentoring: "멘토링",
       campaign: "캠페인 \xB7 출판 \xB7 커뮤니티",

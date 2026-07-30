@@ -82,6 +82,7 @@ export const activitiesKo: Activity[] = [
       "휴일 오전 시간대였음에도 중도 이탈 없이 80분 정시 종료",
       "참석자 설문(응답 5명)에서 만족도 5.0 / 5.0, 응답자 전원이 추천 의향",
     ],
+    featured: true,
   },
   {
     slug: "twojobmate-linkedin-lecture",
@@ -111,6 +112,7 @@ export const activitiesKo: Activity[] = [
       "'Confident', 'Impressive' 피드백",
       "글로벌 무대 프레젠터 자질 입증",
     ],
+    featured: true,
   },
   {
     slug: "hyphencon",
@@ -125,6 +127,7 @@ export const activitiesKo: Activity[] = [
       "40분에서 30분으로 압축",
       "'고봉밥같이 꽉 찬 강의' 평가",
     ],
+    featured: true,
   },
   {
     slug: "founders",

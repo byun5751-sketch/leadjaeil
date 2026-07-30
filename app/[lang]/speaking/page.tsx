@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mic, Users, TrendingUp, ChevronDown } from "lucide-react";
+import { Mic, Users, TrendingUp, ChevronDown, Star } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 import { getData } from "@/lib/get-data";
@@ -78,8 +78,13 @@ export default async function SpeakingPage({
   const mentoring = activities.filter((a) => a.type === "mentoring").sort(byDateDesc);
   const campaigns = activities.filter((a) => a.type === "campaign").sort(byDateDesc);
 
+  // Featured talks are lifted out of the list rather than repeated in it, so
+  // the counts below still add up to the total.
+  const featured = speaking.filter((a) => a.featured);
+  const rest = speaking.filter((a) => !a.featured);
+
   const sections = [
-    { title: t.speakingPage.speaking, items: speaking, icon: Mic },
+    { title: t.speakingPage.speaking, items: rest, icon: Mic },
     { title: t.speakingPage.mentoring, items: mentoring, icon: Users },
     { title: t.speakingPage.campaign, items: campaigns, icon: TrendingUp },
   ];
@@ -91,6 +96,57 @@ export default async function SpeakingPage({
       </p>
       <h1 className="mt-2 font-serif text-4xl text-text">{t.speakingPage.title}</h1>
       <p className="mt-3 max-w-lg text-sm text-text-secondary">{t.speakingPage.desc}</p>
+
+      {featured.length > 0 && (
+        <section className="mt-14">
+          <div className="flex items-center gap-2">
+            <Star size={18} className="text-accent" />
+            <h2 className="text-lg font-semibold text-text">
+              {t.speakingPage.featured}
+            </h2>
+          </div>
+          <p className="mt-2 max-w-lg text-sm text-text-secondary">
+            {t.speakingPage.featuredDesc}
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {featured.map((item) => (
+              <article
+                key={item.slug}
+                className="flex flex-col rounded-2xl border border-accent bg-surface p-6"
+              >
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-xs text-text-tertiary">{item.date}</span>
+                  {item.audience && (
+                    <span className="rounded-full bg-accent-bg px-2.5 py-0.5 text-[11px] font-medium text-accent">
+                      {item.audience}
+                    </span>
+                  )}
+                </div>
+                <h3 className="mt-3 font-serif text-lg leading-snug text-text">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                  {item.summary}
+                </p>
+                {item.highlights.length > 0 && (
+                  <ul className="mt-auto space-y-2 pt-5">
+                    {item.highlights.map((h, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-text-secondary"
+                      >
+                        <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       <div className="mt-16 space-y-16">
         {sections.map((section) => (
