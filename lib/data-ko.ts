@@ -69,6 +69,22 @@ export const booksKo: Book[] = [
 
 export const activitiesKo: Activity[] = [
   {
+    slug: "twojobmate-linkedin-lecture",
+    title: "투잡연구소 「링크드인과 함께한, 무한도전!」 특강",
+    type: "speaking",
+    date: "2026.07",
+    audience: "커뮤니티 수강생 20여 명",
+    summary:
+      "구직과 사이드 프로젝트를 병행하는 수강생들의 상황을 사전에 파악해, 기능 설명이 아니라 '커리어를 자산으로 쌓고 기회로 연결하는 법' 중심의 90분 라이브 세션으로 구성했습니다. 링크드인을 외국계 채용 사이트가 아니라 자기 커리어를 기록하고 사람과 연결되는 공간으로 다시 보게 하는 데 초점을 맞췄습니다.",
+    highlights: [
+      "이직 준비생 \xB7 B2B 영업 \xB7 크리에이터 등 직군별 맞춤 워크북 제공",
+      "링크드인 프리미엄 5가지 기능을 다른 학습 플랫폼 비용과 비교해 판단 기준 제시",
+      "호스트 조현빈 대표의 B2B 영업 경험을 현장에서 커리큘럼에 결합한 2인 진행",
+      "'첫 글은 자기소개부터'라는 최소 실행 단위를 제시해 시작 장벽을 낮춤",
+      "특강 이후 참여자들의 프로필 개편과 첫 글 작성으로 이어짐",
+    ],
+  },
+  {
     slug: "yonsei-greenprint",
     title: "연세대 \xD7 인도네시아 대사관 후원 'Greenprint of Progress' 강사",
     type: "speaking",

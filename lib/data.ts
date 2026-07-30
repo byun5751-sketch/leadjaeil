@@ -117,6 +117,22 @@ export const books: Book[] = [
 
 export const activities: Activity[] = [
   {
+    slug: "twojobmate-linkedin-lecture",
+    title: "Twojob Lab, \"Endless Challenge with LinkedIn\" guest talk",
+    type: "speaking",
+    date: "2026.07",
+    audience: "About 20 community members",
+    summary:
+      "Profiled the attendees — people balancing a job search with side projects — before the session, and built a 90-minute live curriculum around turning a career into an asset and connecting it to opportunities, rather than walking through features. The focus was shifting how they saw LinkedIn: not a job board for foreign-invested companies, but a place to record a career and meet people through it.",
+    highlights: [
+      "Workbooks tailored by track: job seekers, B2B sales, creators",
+      "Compared the five LinkedIn Premium features against the cost of other learning platforms so attendees could judge it for themselves",
+      "Co-hosted with Hyunbin Cho, weaving his B2B sales experience into the curriculum live",
+      "Lowered the barrier to starting with a minimum viable action: your first post is just an introduction",
+      "Attendees went on to rewrite their profiles and publish a first post",
+    ],
+  },
+  {
     slug: "yonsei-greenprint",
     title: "Yonsei x Indonesian Embassy 'Greenprint of Progress' Lecturer",
     type: "speaking",

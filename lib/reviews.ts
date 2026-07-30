@@ -18,7 +18,7 @@ export const reviews: Review[] = [
   {
     slug: "twojobmate-5th-lecture",
     title: "Notes on the “Endless Challenge with LinkedIn” talk",
-    event: "Jouro Twojobmate, fifth guest talk",
+    event: "Twojob Lab, Twojobmate fifth guest talk",
     date: "2026.07",
     attribution: "Attendee",
     pullQuote: "What stayed with me most: opportunity is made inside relationships.",

@@ -8,7 +8,7 @@ export const reviewsKo: Review[] = [
   {
     slug: "twojobmate-5th-lecture",
     title: "링크드인과 함께한, 무한도전! 특강 후기",
-    event: "조로 투잡메이트 5번째 특강",
+    event: "투잡연구소 투잡메이트 5번째 특강",
     date: "2026.07",
     attribution: "특강 참여자",
     pullQuote:
