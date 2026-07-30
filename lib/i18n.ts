@@ -66,6 +66,26 @@ const t = {
         },
       ],
     },
+    homeTalks: {
+      eyebrow: "Selected work",
+      title: "Recent sessions",
+      desc: "Three in-person sessions. The full record, including mentoring and campaigns, is on the speaking page.",
+      viewAll: "All speaking and activities",
+    },
+    homeServices: {
+      eyebrow: "Work together",
+      title: "Three ways in",
+      desc: "Free through to hands-on. Compare them side by side before deciding.",
+      viewAll: "Compare all three",
+      forWho: "Who it's for",
+      cost: "Cost",
+    },
+    homeReviews: {
+      eyebrow: "Feedback",
+      title: "What attendees said",
+      desc: "Written and surveyed by people who were in the room.",
+      viewAll: "Read the reviews",
+    },
     featuredBooks: {
       eyebrow: "Published Works",
       title: "Books",
@@ -226,6 +246,26 @@ const t = {
           cta: "강연 이력 보기",
         },
       ],
+    },
+    homeTalks: {
+      eyebrow: "대표 사례",
+      title: "최근 진행한 강연",
+      desc: "현장에서 진행한 세 건입니다. 멘토링과 캠페인을 포함한 전체 이력은 강연 페이지에 있습니다.",
+      viewAll: "강연 \xB7 활동 전체 보기",
+    },
+    homeServices: {
+      eyebrow: "함께하기",
+      title: "세 가지 방법",
+      desc: "무료부터 1:1 밀착까지. 고르기 전에 나란히 비교해보세요.",
+      viewAll: "세 가지 비교해보기",
+      forWho: "대상",
+      cost: "비용",
+    },
+    homeReviews: {
+      eyebrow: "후기",
+      title: "참여한 분들의 이야기",
+      desc: "현장에 있었던 분들이 직접 남긴 글과 설문입니다.",
+      viewAll: "후기 전체 보기",
     },
     featuredBooks: {
       eyebrow: "출간 도서",

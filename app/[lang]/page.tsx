@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, ExternalLink, Sprout, Target, Briefcase, Mic } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Briefcase,
+  ExternalLink,
+  Mic,
+  Quote,
+  Sprout,
+  Target,
+} from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
-import { getData } from "@/lib/get-data";
+import { getData, getReviews } from "@/lib/get-data";
+import { getComparison } from "@/lib/services";
 import { alternatesFor } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -24,7 +34,10 @@ export default async function HomePage({
 }) {
   const { lang } = await params;
   const t = getTranslations(lang as Lang);
-  const { books } = getData(lang as Lang);
+  const { books, activities } = getData(lang as Lang);
+  const featuredTalks = activities.filter((a) => a.featured);
+  const services = getComparison(lang as Lang);
+  const reviews = getReviews(lang as Lang);
 
   // Icon and destination for each starting point, in the same order as
   // t.paths.items. Copy lives in i18n; only locale-independent bits are here.
@@ -144,6 +157,61 @@ export default async function HomePage({
         </div>
       </section>
 
+
+      {/* Selected talks */}
+      <section className="border-b border-border bg-surface">
+        <div className="site-shell py-20">
+          <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
+            {t.homeTalks.eyebrow}
+          </p>
+          <h2 className="mt-2 font-serif text-3xl text-text">{t.homeTalks.title}</h2>
+          <p className="mt-3 max-w-xl text-sm text-text-secondary">{t.homeTalks.desc}</p>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {featuredTalks.map((talk) => (
+              <Link
+                key={talk.slug}
+                href={`/${lang}/speaking`}
+                className="group flex flex-col rounded-xl border border-border bg-bg p-6 transition-colors hover:border-accent-light"
+              >
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-xs text-text-tertiary">{talk.date}</span>
+                  {talk.audience && (
+                    <span className="rounded-full bg-accent-bg px-2.5 py-0.5 text-[11px] font-medium text-accent">
+                      {talk.audience}
+                    </span>
+                  )}
+                </div>
+                <h3 className="mt-3 font-serif text-lg leading-snug text-text group-hover:text-accent">
+                  {talk.title}
+                </h3>
+                <ul className="mt-auto space-y-1.5 pt-4">
+                  {talk.highlights.slice(0, 2).map((h, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-xs leading-relaxed text-text-secondary"
+                    >
+                      <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <Link
+              href={`/${lang}/speaking`}
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-highlight"
+            >
+              {t.homeTalks.viewAll}
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Books */}
       <section className="border-b border-border bg-surface-warm">
         <div className="site-shell py-20">
@@ -193,6 +261,124 @@ export default async function HomePage({
           </div>
         </div>
       </section>
+
+
+      {/* Services */}
+      <section className="border-b border-border">
+        <div className="site-shell py-20">
+          <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
+            {t.homeServices.eyebrow}
+          </p>
+          <h2 className="mt-2 font-serif text-3xl text-text">{t.homeServices.title}</h2>
+          <p className="mt-3 max-w-xl text-sm text-text-secondary">{t.homeServices.desc}</p>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {services.columns.map((service) => {
+              const inner = (
+                <>
+                  <span className="inline-block self-start rounded-full bg-accent-bg px-2.5 py-0.5 text-[10px] font-bold tracking-wider text-accent">
+                    {service.badge}
+                  </span>
+                  <h3 className="mt-4 font-serif text-xl text-text group-hover:text-accent">
+                    {service.name}
+                  </h3>
+                  <dl className="mt-4 space-y-3 text-sm">
+                    <div>
+                      <dt className="text-xs text-text-tertiary">{t.homeServices.forWho}</dt>
+                      <dd className="mt-0.5 leading-relaxed text-text-secondary">
+                        {service.values[0]}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs text-text-tertiary">{t.homeServices.cost}</dt>
+                      <dd className="mt-0.5 leading-relaxed text-text-secondary">
+                        {service.values[3]}
+                      </dd>
+                    </div>
+                  </dl>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium text-accent">
+                    {service.cta}
+                    <ArrowRight
+                      size={14}
+                      className="transition-transform group-hover:translate-x-0.5"
+                    />
+                  </span>
+                </>
+              );
+              const cls =
+                "group flex flex-col rounded-xl border border-border bg-surface p-6 transition-colors hover:border-accent-light";
+              return service.detail ? (
+                <Link
+                  key={service.key}
+                  href={`/${lang}/services/${service.detail}`}
+                  className={cls}
+                >
+                  {inner}
+                </Link>
+              ) : (
+                <a
+                  key={service.key}
+                  href={service.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cls}
+                >
+                  {inner}
+                </a>
+              );
+            })}
+          </div>
+
+          <div className="mt-8">
+            <Link
+              href={`/${lang}/services`}
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-highlight"
+            >
+              {t.homeServices.viewAll}
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      {reviews.length > 0 && (
+        <section className="border-b border-border bg-surface">
+          <div className="site-shell py-20">
+            <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
+              {t.homeReviews.eyebrow}
+            </p>
+            <h2 className="mt-2 font-serif text-3xl text-text">{t.homeReviews.title}</h2>
+            <p className="mt-3 max-w-xl text-sm text-text-secondary">{t.homeReviews.desc}</p>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-2">
+              {reviews.map((review) => (
+                <Link
+                  key={review.slug}
+                  href={`/${lang}/reviews`}
+                  className="group flex flex-col rounded-xl border border-border bg-bg p-6 transition-colors hover:border-accent-light"
+                >
+                  <Quote size={16} className="text-accent" />
+                  <p className="mt-3 text-sm leading-relaxed text-text">{review.pullQuote}</p>
+                  <p className="mt-auto pt-5 text-xs text-text-tertiary">
+                    {review.event} &middot; {review.date}
+                  </p>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-8">
+              <Link
+                href={`/${lang}/reviews`}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-highlight"
+              >
+                {t.homeReviews.viewAll}
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="bg-highlight">
