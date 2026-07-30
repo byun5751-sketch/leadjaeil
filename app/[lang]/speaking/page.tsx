@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Mic, Users, TrendingUp, ChevronDown, Star } from "lucide-react";
+import Link from "next/link";
+import { Mic, Users, TrendingUp, ChevronDown, Star, ArrowRight } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 import { getData } from "@/lib/get-data";
@@ -82,6 +83,7 @@ export default async function SpeakingPage({
   // and again below, because the list underneath is the full record and a
   // record with holes in it is worse than a repeated entry.
   const featured = speaking.filter((a) => a.featured);
+  const b = t.speakingPage.booking;
 
   const sections = [
     { title: t.speakingPage.speaking, items: speaking, icon: Mic },
@@ -147,6 +149,83 @@ export default async function SpeakingPage({
           </div>
         </section>
       )}
+
+      {/* Everything a booker needs before writing, and the form to write with. */}
+      <section className="mt-16 rounded-2xl border border-border bg-surface p-6 md:p-10">
+        <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
+          {b.eyebrow}
+        </p>
+        <h2 className="mt-2 font-serif text-3xl text-text">{b.title}</h2>
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-text-secondary">{b.desc}</p>
+
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
+          <div>
+            <h3 className="text-sm font-semibold text-text">{b.topicsTitle}</h3>
+            <ul className="mt-4 space-y-2.5">
+              {b.topics.map((topic) => (
+                <li
+                  key={topic}
+                  className="flex items-start gap-2 text-sm leading-relaxed text-text-secondary"
+                >
+                  <span className="mt-2 block h-1 w-1 shrink-0 rounded-full bg-accent" />
+                  {topic}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-text">{b.audienceTitle}</h3>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {b.audiences.map((a) => (
+                <li
+                  key={a}
+                  className="rounded-full bg-accent-bg px-3 py-1.5 text-xs font-medium text-accent"
+                >
+                  {a}
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mt-8 text-sm font-semibold text-text">{b.formatTitle}</h3>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {b.formats.map((f) => (
+                <li
+                  key={f}
+                  className="rounded-full border border-border px-3 py-1.5 text-xs text-text-secondary"
+                >
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-xl bg-surface-warm p-6">
+            <h3 className="text-sm font-semibold text-text">{b.needTitle}</h3>
+            <p className="mt-2 text-xs leading-relaxed text-text-tertiary">{b.needDesc}</p>
+            <ol className="mt-4 space-y-2.5">
+              {b.needs.map((need, i) => (
+                <li
+                  key={need}
+                  className="flex items-start gap-2.5 text-sm leading-relaxed text-text-secondary"
+                >
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-bg text-[10px] font-bold text-accent">
+                    {i + 1}
+                  </span>
+                  {need}
+                </li>
+              ))}
+            </ol>
+            <Link
+              href={`/${lang}/contact`}
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-highlight px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-text"
+            >
+              {b.cta}
+              <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <div className="mt-16 space-y-16">
         {sections.map((section) => (
