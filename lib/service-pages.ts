@@ -90,6 +90,19 @@ export type ColumnsBlock = {
   note?: string;
 };
 
+/**
+ * Practical terms to read before applying: cost, time, what to prepare, what
+ * disqualifies you. Every item has to be something already stated elsewhere on
+ * the page — this block restates commitments, it does not invent them.
+ */
+export type ChecklistBlock = {
+  kind: "checklist";
+  eyebrow: string;
+  title: string;
+  desc?: string;
+  items: string[];
+};
+
 export type FaqBlock = {
   kind: "faq";
   eyebrow: string;
@@ -113,6 +126,7 @@ export type Block =
   | ExpertBlock
   | PricingBlock
   | ColumnsBlock
+  | ChecklistBlock
   | FaqBlock
   | ClosingBlock;
 
@@ -163,6 +177,33 @@ export const servicePages: ServicePage[] = [
             mark: "03",
             title: "You have no idea what to post",
             desc: "You want to write, but you do not know what about, or who you are writing for. Activity without a strategy is wasted time.",
+          },
+        ],
+      },
+      {
+        kind: "columns",
+        eyebrow: "Who it's for",
+        title: "Who this is for",
+        groups: [
+          {
+            title: "This fits you if",
+            tone: "yes",
+            items: [
+              "You are working towards a role or a move at a foreign-invested or global company",
+              "You have a profile, but it brings in no views and no approaches",
+              "You are a solopreneur or freelancer looking for business through LinkedIn",
+              "You cannot spare a long stretch of time and want it sorted in one go",
+              "Entry level through senior — years of experience do not matter here",
+            ],
+          },
+          {
+            title: "Something else would serve you better if",
+            tone: "no",
+            items: [
+              "You would rather learn by working through the steps yourself — take the 5-week challenge",
+              "You have not decided whether to use LinkedIn at all — ask in the free Lab first",
+              "What you need reviewed is the resume or the interview itself, not the profile",
+            ],
           },
         ],
       },
@@ -313,6 +354,20 @@ export const servicePages: ServicePage[] = [
         ],
         footnote:
           "Reach out by email or KakaoTalk and we will find a time together.",
+      },
+      {
+        kind: "checklist",
+        eyebrow: "Before you apply",
+        title: "Before you apply",
+        desc: "The things it would be awkward to find out afterwards.",
+        items: [
+          "One session: 2–3 hours of research beforehand, then 2 hours of workshop.",
+          "In person or online over Zoom — the deliverables are the same either way.",
+          "Share your LinkedIn profile URL and your latest resume, in Korean or English, before the session. Without a resume, a summary of your career so far or the direction you want is enough.",
+          "Deliverables arrive after the session as a Notion page or a PDF.",
+          "Both English and Korean profiles are supported.",
+          "The date is agreed after an email or KakaoTalk conversation. Applying does not book a slot on its own.",
+        ],
       },
       {
         kind: "faq",
@@ -530,6 +585,34 @@ export const servicePages: ServicePage[] = [
           "Participants who miss week 5 do not receive a certificate of completion.",
       },
       {
+        kind: "cards",
+        eyebrow: "What you get",
+        title: "What you have after five weeks",
+        desc: "Listed by what you are left holding, not by what was covered.",
+        items: [
+          {
+            mark: "1",
+            title: "A finished LinkedIn profile",
+            desc: "Photo, headline, education, work experience, About and skills — every section filled in by the end.",
+          },
+          {
+            mark: "2",
+            title: "Korean and English resumes",
+            desc: "The resume you submit in week 1 gets reviewed, and the provided tooling helps you finish both language versions.",
+          },
+          {
+            mark: "3",
+            title: "Three target companies with HR contacts",
+            desc: "Drawn up per participant from the resume review, so no two lists are the same.",
+          },
+          {
+            mark: "4",
+            title: "A content plan for four weeks and beyond",
+            desc: "Your introduction post and career-journey post get structured, and you leave with a plan to keep writing after the challenge ends.",
+          },
+        ],
+      },
+      {
         kind: "results",
         eyebrow: "Results",
         title: "What participants changed",
@@ -636,6 +719,22 @@ export const servicePages: ServicePage[] = [
           },
         ],
         note: "Communication happens in the KakaoTalk room, and missions are uploaded to the Naver cafe for feedback.",
+      },
+      {
+        kind: "checklist",
+        eyebrow: "Before you apply",
+        title: "Before you apply",
+        desc: "What it takes to reach the end of the five weeks.",
+        items: [
+          "One live lecture a week for five weeks, with a mission every week. Finishing takes five or more hours a week.",
+          "The programme costs ₩300,000, and ₩100,000 is refunded once every mission is complete.",
+          "“It works! LinkedIn” is the course text and has to be bought separately. It is not included in the fee.",
+          "Conversation happens in the KakaoTalk room and missions are submitted to the Naver cafe. You need to join both.",
+          "Missions have to be uploaded by midnight the night before class to get feedback.",
+          "Missing a live lecture is fine — the recording counts as attendance.",
+          "No certificate is issued if you miss the week 5 share session.",
+          "Profiles are written in English, so basic English is required.",
+        ],
       },
       {
         kind: "faq",

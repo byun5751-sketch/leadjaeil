@@ -258,6 +258,24 @@ export default async function ServicesPage({
             </table>
           </div>
         </div>
+
+        <div className="mt-10 rounded-2xl bg-surface-warm p-6 md:p-8">
+          <h3 className="font-serif text-xl text-text">
+            {isKo ? "아직 고르기 어렵다면" : "Still not sure which one?"}
+          </h3>
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-text-secondary">
+            {isKo
+              ? "지금 상황을 적어 보내주시면 어떤 쪽이 맞을지, 혹은 지금은 무료 공작소로 충분한지 알려드립니다. 맞지 않는 걸 권하지는 않습니다."
+              : "Send over where you are right now and you will get an honest read on which one fits — including whether the free Lab is enough for now. Nothing gets recommended that does not fit."}
+          </p>
+          <Link
+            href={`/${lang}/contact`}
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-highlight px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-text"
+          >
+            {isKo ? "상황 알려주고 추천받기" : "Tell me your situation"}
+            <ArrowRight size={15} />
+          </Link>
+        </div>
       </section>
     </div>
   );

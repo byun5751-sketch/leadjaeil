@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Check, ChevronDown, Mail, MessageCircle, X } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Check,
+  ChevronDown,
+  ClipboardCheck,
+  Mail,
+  MessageCircle,
+  X,
+} from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { locales } from "@/lib/i18n";
 import { getServicePage, getServicePages } from "@/lib/get-data";
@@ -52,25 +61,43 @@ function SectionHead({
   );
 }
 
-function ContactButtons({ label }: { label: { email: string; kakao: string } }) {
+type CtaLabels = { form: string; formNote: string; email: string; kakao: string };
+
+/**
+ * The form is the primary path: it asks for the schedule, audience and budget
+ * up front, so the first reply can be a real answer instead of a request for
+ * those details. Email and KakaoTalk stay for people who would rather just
+ * write.
+ */
+function ContactButtons({ lang, label }: { lang: string; label: CtaLabels }) {
   return (
-    <div className="flex flex-wrap gap-3">
-      <a
-        href={EMAIL_URL}
-        className="inline-flex items-center gap-2 rounded-full bg-highlight px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-text"
-      >
-        <Mail size={15} />
-        {label.email}
-      </a>
-      <a
-        href={KAKAO_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-medium text-text transition-colors hover:border-accent-light hover:text-accent"
-      >
-        <MessageCircle size={15} />
-        {label.kakao}
-      </a>
+    <div>
+      <div className="flex flex-wrap gap-3">
+        <Link
+          href={`/${lang}/contact`}
+          className="inline-flex items-center gap-2 rounded-full bg-highlight px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-text"
+        >
+          {label.form}
+          <ArrowRight size={15} />
+        </Link>
+        <a
+          href={EMAIL_URL}
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-medium text-text transition-colors hover:border-accent-light hover:text-accent"
+        >
+          <Mail size={15} />
+          {label.email}
+        </a>
+        <a
+          href={KAKAO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-medium text-text transition-colors hover:border-accent-light hover:text-accent"
+        >
+          <MessageCircle size={15} />
+          {label.kakao}
+        </a>
+      </div>
+      <p className="mt-3 text-xs text-text-tertiary">{label.formNote}</p>
     </div>
   );
 }
@@ -81,11 +108,13 @@ const shades = ["bg-bg", "bg-surface", "bg-surface-warm"];
 function BlockView({
   block,
   shade,
+  lang,
   labels,
 }: {
   block: Block;
   shade: string;
-  labels: { email: string; kakao: string };
+  lang: string;
+  labels: CtaLabels;
 }) {
   const wrap = (children: React.ReactNode, extra = "") => (
     <section className={`border-b border-border ${shade} ${extra}`}>
@@ -124,7 +153,7 @@ function BlockView({
               ))}
             </div>
             <div className="mt-10">
-              <ContactButtons label={labels} />
+              <ContactButtons lang={lang} label={labels} />
             </div>
           </div>
         </section>
@@ -302,7 +331,7 @@ function BlockView({
               ))}
             </ul>
             <div className="mt-8">
-              <ContactButtons label={labels} />
+              <ContactButtons lang={lang} label={labels} />
             </div>
             {block.footnote && (
               <p className="mt-4 text-xs text-text-tertiary">{block.footnote}</p>
@@ -347,6 +376,24 @@ function BlockView({
               {block.note}
             </p>
           )}
+        </>
+      );
+
+    case "checklist":
+      return wrap(
+        <>
+          <SectionHead eyebrow={block.eyebrow} title={block.title} desc={block.desc} />
+          <ul className="mt-10 grid max-w-3xl gap-3">
+            {block.items.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 rounded-xl border border-border bg-surface px-5 py-4 text-sm leading-relaxed text-text-secondary"
+              >
+                <ClipboardCheck size={16} className="mt-0.5 shrink-0 text-accent" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </>
       );
 
@@ -417,10 +464,23 @@ export default async function ServiceDetailPage({
   if (!page) notFound();
 
   const isKo = lang === "ko";
-  const labels = {
-    email: isKo ? "이메일 문의" : "Email us",
-    kakao: isKo ? "카카오톡 문의" : "KakaoTalk",
-  };
+  // The form asks what a first reply needs to know, so it leads. Naming the
+  // service in the button beats a generic "contact us".
+  const labels: CtaLabels = isKo
+    ? {
+        form: `${page.navTitle} 문의하기`,
+        formNote:
+          "폼에 일정과 대상, 예산 범위를 적어주시면 첫 답장에서 바로 안내드릴 수 있습니다.",
+        email: "이메일",
+        kakao: "카카오톡",
+      }
+    : {
+        form: `Ask about the ${page.navTitle.toLowerCase()}`,
+        formNote:
+          "Filling in the date, audience and budget on the form means the first reply can answer rather than ask.",
+        email: "Email",
+        kakao: "KakaoTalk",
+      };
 
   // The hero carries its own background, so alternate shades from the block
   // after it.
@@ -431,7 +491,7 @@ export default async function ServiceDetailPage({
       {page.blocks.map((block, i) => {
         const shade = block.kind === "hero" ? "" : shades[shadeIndex++ % shades.length];
         return (
-          <BlockView key={i} block={block} shade={shade} labels={labels} />
+          <BlockView key={i} block={block} shade={shade} lang={lang} labels={labels} />
         );
       })}
 
