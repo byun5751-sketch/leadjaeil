@@ -18,15 +18,13 @@ const t = {
       role: "LinkedIn Creator / Author",
       brandLine:
         "Showing how to build career and business opportunities through LinkedIn branding.",
-      tagline:
-        "From an ordinary college student to a global company employee, creator with 30K+ followers, and author of two books. This is the record of that journey.",
       cta1: "View Books",
       cta2: "Get in Touch",
     },
     stats: {
       followers: "Followers",
       views: "Impressions",
-      books: "Books Published",
+      careerMoves: "Career moves via LinkedIn",
       events: "Speaking Events",
     },
     paths: {
@@ -170,15 +168,13 @@ const t = {
       name: "리드제일",
       role: "링크드인 크리에이터 \xB7 작가",
       brandLine: "링크드인 브랜딩으로 커리어와 비즈니스 기회를 만드는 방법을 안내합니다.",
-      tagline:
-        "평범한 대학생에서 시작해 링크드인 하나로 글로벌 기업 3곳에 취업하고, 3만여 명의 팔로워를 둔 크리에이터이자 두 권의 책을 낸 작가가 되기까지의 기록입니다.",
       cta1: "저서 보기",
       cta2: "연락하기",
     },
     stats: {
       followers: "팔로워",
       views: "누적 조회수",
-      books: "출간 도서",
+      careerMoves: "링크드인으로 이직한 외국계",
       events: "강연 횟수",
     },
     paths: {
