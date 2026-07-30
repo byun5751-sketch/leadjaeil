@@ -127,7 +127,7 @@ export const activities: Activity[] = [
     highlights: [
       "Workbooks tailored by track: job seekers, B2B sales, creators",
       "Compared the five LinkedIn Premium features against the cost of other learning platforms so attendees could judge it for themselves",
-      "Co-hosted with Hyunbin Cho, weaving his B2B sales experience into the curriculum live",
+      "Co-hosted, weaving the host's B2B sales experience into the curriculum live",
       "Lowered the barrier to starting with a minimum viable action: your first post is just an introduction",
       "Attendees went on to rewrite their profiles and publish a first post",
     ],
