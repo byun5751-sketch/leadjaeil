@@ -9,8 +9,16 @@ const t = {
       books: "Books",
       speaking: "Speaking",
       services: "Services",
+      reviews: "Reviews",
       links: "SNS",
       contact: "Contact",
+    },
+    reviewsPage: {
+      eyebrow: "Reviews",
+      title: "What attendees said",
+      desc: "Written by people who attended a talk or a programme. Click a review to read it in full.",
+      translatedNote: "Translated from the Korean the reviewer wrote.",
+      empty: "No reviews yet.",
     },
     hero: {
       status: "Favikon-selected LinkedIn Ambassador in Korea",
@@ -160,8 +168,16 @@ const t = {
       books: "저서",
       speaking: "강연",
       services: "서비스",
+      reviews: "후기",
       links: "SNS",
       contact: "연락하기",
+    },
+    reviewsPage: {
+      eyebrow: "후기",
+      title: "참여자들이 남긴 이야기",
+      desc: "강연과 프로그램에 참여한 분들이 직접 쓴 글입니다. 제목을 누르면 전문을 읽을 수 있습니다.",
+      translatedNote: "작성자가 쓴 한국어 원문을 번역했습니다.",
+      empty: "아직 등록된 후기가 없습니다.",
     },
     hero: {
       status: "파비콘(Favikon) 선정 국내 유일 링크드인 앨버서더",

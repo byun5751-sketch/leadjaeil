@@ -40,6 +40,7 @@ export function Footer({ lang }: { lang: Lang }) {
                   { href: `/${lang}/books`, label: t.nav.books },
                   { href: `/${lang}/speaking`, label: t.nav.speaking },
                   { href: `/${lang}/services`, label: t.nav.services },
+                  { href: `/${lang}/reviews`, label: t.nav.reviews },
                   { href: `/${lang}/contact`, label: t.nav.contact },
                 ].map((l) => (
                   <li key={l.href}>

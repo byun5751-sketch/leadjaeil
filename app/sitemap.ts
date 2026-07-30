@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/services/linkedin-workshop",
     "/services/career-challenge",
+    "/reviews",
     "/links",
     "/contact",
   ];

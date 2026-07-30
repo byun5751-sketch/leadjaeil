@@ -3,6 +3,8 @@ import { books, activities, channels, careers } from "./data";
 import { booksKo, activitiesKo, channelsKo, careersKo } from "./data-ko";
 import { servicePages } from "./service-pages";
 import { servicePagesKo } from "./service-pages-ko";
+import { reviews } from "./reviews";
+import { reviewsKo } from "./reviews-ko";
 
 export function getData(lang: Lang) {
   if (lang === "ko") {
@@ -19,6 +21,10 @@ export function getData(lang: Lang) {
     channels,
     careers,
   };
+}
+
+export function getReviews(lang: Lang) {
+  return lang === "ko" ? reviewsKo : reviews;
 }
 
 export function getServicePages(lang: Lang) {
