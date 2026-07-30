@@ -78,13 +78,13 @@ export default async function SpeakingPage({
   const mentoring = activities.filter((a) => a.type === "mentoring").sort(byDateDesc);
   const campaigns = activities.filter((a) => a.type === "campaign").sort(byDateDesc);
 
-  // Featured talks are lifted out of the list rather than repeated in it, so
-  // the counts below still add up to the total.
+  // Featured talks are shown twice on purpose: once up front as a showcase,
+  // and again below, because the list underneath is the full record and a
+  // record with holes in it is worse than a repeated entry.
   const featured = speaking.filter((a) => a.featured);
-  const rest = speaking.filter((a) => !a.featured);
 
   const sections = [
-    { title: t.speakingPage.speaking, items: rest, icon: Mic },
+    { title: t.speakingPage.speaking, items: speaking, icon: Mic },
     { title: t.speakingPage.mentoring, items: mentoring, icon: Users },
     { title: t.speakingPage.campaign, items: campaigns, icon: TrendingUp },
   ];
