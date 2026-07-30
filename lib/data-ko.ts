@@ -69,6 +69,21 @@ export const booksKo: Book[] = [
 
 export const activitiesKo: Activity[] = [
   {
+    slug: "microsoft-ai-playground",
+    title: "마이크로소프트 AI 커뮤니티 [작은 놀이터] 'LinkedIn 소셜 브랜딩하기'",
+    type: "speaking",
+    date: "2026.07",
+    audience: "시니어 IT 현업자 35명",
+    summary:
+      "이미 각자 분야에서 전문성을 갖춘 분들이라 정보가 부족한 게 아니라, 소셜 미디어에 자기를 드러내는 일 자체에 심리적 장벽이 있는 자리였습니다. 그래서 듣기만 하는 강연 대신 이론·사례 50분과 실습·Q&A 30분을 붙인 80분 워크숍으로 설계했습니다.",
+    highlights: [
+      "참가자 직군(개발\xB7PM\xB7마케팅)을 사전 분석해 2단계 커리큘럼으로 구성",
+      "현장에서 프로필 문구와 글감을 바로 뽑을 수 있는 학습지와 참고 요약집을 자체 제작\xB7배포",
+      "휴일 오전 시간대였음에도 중도 이탈 없이 80분 정시 종료",
+      "참석자 설문(응답 5명)에서 만족도 5.0 / 5.0, 응답자 전원이 추천 의향",
+    ],
+  },
+  {
     slug: "twojobmate-linkedin-lecture",
     title: "투잡연구소 투잡메이트 5번째 특강",
     type: "speaking",

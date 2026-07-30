@@ -117,6 +117,21 @@ export const books: Book[] = [
 
 export const activities: Activity[] = [
   {
+    slug: "microsoft-ai-playground",
+    title: "Microsoft AI Community, \"LinkedIn social branding\" workshop",
+    type: "speaking",
+    date: "2026.07",
+    audience: "35 senior IT professionals",
+    summary:
+      "Everyone in the room was already an expert in their own field, so the gap was not information — it was the discomfort of putting yourself on social media. Rather than a talk to sit through, the session ran as an 80-minute workshop: 50 minutes of theory and examples, then 30 minutes of hands-on work and Q&A.",
+    highlights: [
+      "Curriculum built in two stages after profiling the tracks in the room: engineering, PM, marketing",
+      "Wrote and printed a worksheet and a reference summary so attendees could draft profile copy and post ideas on the spot",
+      "Finished on time at 80 minutes with nobody leaving, on a holiday morning",
+      "Attendee survey (5 responses): 5.0 / 5.0 satisfaction, every respondent would recommend it",
+    ],
+  },
+  {
     slug: "twojobmate-linkedin-lecture",
     title: "Twojob Lab, Twojobmate fifth guest talk",
     type: "speaking",

@@ -92,7 +92,7 @@ export default async function HomePage({
             { value: "30,000+", label: t.stats.followers },
             { value: lang === "ko" ? "130만+" : "1.3M+", label: t.stats.views },
             { value: "3", label: t.stats.careerMoves },
-            { value: "10", label: t.stats.events },
+            { value: "11", label: t.stats.events },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="font-serif text-3xl text-text">{stat.value}</p>
