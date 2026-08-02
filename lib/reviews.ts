@@ -20,9 +20,39 @@ export type Review = {
   /** Set on translations so the page can say the words were not written in
    *  this language. Slugs must match reviews-ko.ts. */
   translated?: boolean;
+  /** Where the review was originally published, when it is public. */
+  sourceUrl?: string;
 };
 
 export const reviews: Review[] = [
+  {
+    slug: "linkedin-1chon-connections",
+    title: "What I did before sending a single connection request",
+    event: "Reader of “It works! LinkedIn”",
+    date: "2026.08",
+    attribution: "JuHyun Lee — Head of Treasury | Corporate Governance & Internal Controls",
+    pullQuote: "On 3 June I had 38 LinkedIn connections. Today I have 1,059.",
+    translated: true,
+    sourceUrl:
+      "https://www.linkedin.com/pulse/%EB%A7%81%ED%81%AC%EB%93%9C%EC%9D%B8-1%EC%B4%8C-%EC%8B%A0%EC%B2%AD%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%ED%95%9C-%EC%9D%BC-juhyun-lee-2tvnc/",
+    body: [
+      "On 3 June I had 38 LinkedIn connections. Today I have 1,059.",
+      "Over those two months I was able to connect with a lot of people, but the most important part was not the connection request itself — it was giving the other person a reason to accept it.",
+      "It started with “It works! LinkedIn” by Jaeil Byun, an author who is himself active on the platform. I read the line “the connection request is everything”, decided to act on it, and began by reworking my profile.",
+      "I rebuilt my career and expertise the way you would a CV, and completed verification for the company I currently work at to make the profile more credible. Then I used the free premium trial to send connection requests along with a message.",
+      "I also put my network in order.",
+      "Headhunters → practitioners in the same field (finance and treasury) → colleagues at overseas branches and head office → decision makers",
+      "Once I passed 500, connections started producing further connections, and after that I expanded the network naturally by posting content.",
+      "The most memorable of them was a conversation with the Treasury Head of an automotive group in Pakistan.",
+      "They were struggling to manage more than 70 accounts across several affiliates, and I shared my experience running cash pooling. They told me they had looked at the same approach, but that regulatory constraints in their country made it hard to apply.",
+      "Beyond that, unexpected conversations keep coming — with treasury specialists abroad, with headhunters, with leaders across a range of industries.",
+      "There is one thing this experience taught me.",
+      "“The connection request is everything” was right.",
+      "But the thing to do before that was to build enough trust that, when someone opened my profile, they saw a person worth connecting with.",
+      "And good connections did, in the end, lead to good conversations I had not expected.",
+      "The greatest value of LinkedIn for me is not the number 1,059, but what I got to learn and think about through those connections.",
+    ],
+  },
   {
     slug: "microsoft-ai-playground",
     title: "\"LinkedIn social branding\" attendee survey",

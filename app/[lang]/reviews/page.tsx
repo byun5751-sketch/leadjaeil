@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ChevronDown, Quote } from "lucide-react";
+import { ChevronDown, ExternalLink, Quote } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 import { getReviews } from "@/lib/get-data";
@@ -112,6 +112,17 @@ export default async function ReviewsPage({
                   <p className="mt-2 text-xs text-text-tertiary">
                     {t.reviewsPage.translatedNote}
                   </p>
+                )}
+                {review.sourceUrl && (
+                  <a
+                    href={review.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-accent transition-colors hover:text-highlight"
+                  >
+                    {t.reviewsPage.sourceLink}
+                    <ExternalLink size={12} />
+                  </a>
                 )}
               </div>
             </details>

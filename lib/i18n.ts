@@ -18,6 +18,7 @@ const t = {
       title: "What attendees said",
       desc: "Written by people who attended a talk or a programme. Click a review to read it in full.",
       translatedNote: "Translated from the Korean the reviewer wrote.",
+      sourceLink: "Read the original",
       empty: "No reviews yet.",
     },
     hero: {
@@ -240,6 +241,7 @@ const t = {
       title: "참여자들이 남긴 이야기",
       desc: "강연과 프로그램에 참여한 분들이 직접 쓴 글입니다. 제목을 누르면 전문을 읽을 수 있습니다.",
       translatedNote: "작성자가 쓴 한국어 원문을 번역했습니다.",
+      sourceLink: "원문 보기",
       empty: "아직 등록된 후기가 없습니다.",
     },
     hero: {
