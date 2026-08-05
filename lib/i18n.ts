@@ -35,6 +35,7 @@ const t = {
       views: "Impressions",
       careerMoves: "Career moves via LinkedIn",
       events: "Speaking Events",
+      note: "Followers and impressions are totals across LinkedIn, Threads, and the Naver blog. The per-channel figures are on the channels page.",
     },
     paths: {
       eyebrow: "Start Here",
@@ -71,10 +72,9 @@ const t = {
       eyebrow: "About",
       title: "Who is Lead Jaeil",
       paragraphs: [
-        "Started with the STAR global internship at SAP Korea, moved on to ZEISS Vision Korea, and now works in business development at BIGO Live. All three moves started on LinkedIn.",
-        "Writing down what those moves took turned into two books, and into sessions on LinkedIn branding for companies, universities, and communities.",
+        "A creator who writes a career down on LinkedIn. From rewriting a single line of a headline to publishing week after week, what gets shared here is what has been tried firsthand and measured.",
+        "Writing that process down turned into two books, and into sessions on LinkedIn branding for companies, universities, and communities.",
       ],
-      careerLabel: "Career",
     },
     homeTalks: {
       eyebrow: "Selected work",
@@ -267,6 +267,7 @@ const t = {
       views: "누적 조회수",
       careerMoves: "링크드인으로 이직한 외국계",
       events: "강연 횟수",
+      note: "팔로워와 조회수는 링크드인 \xB7 스레드 \xB7 네이버 블로그를 합한 전체 채널 기준입니다. 채널별 수치는 SNS 페이지에서 확인하실 수 있습니다.",
     },
     paths: {
       eyebrow: "시작점 찾기",
@@ -303,10 +304,9 @@ const t = {
       eyebrow: "소개",
       title: "리드제일은 누구인가요",
       paragraphs: [
-        "SAP 코리아 STAR 글로벌 인턴십으로 시작해 자이스(ZEISS) 비전 코리아를 거쳐, 지금은 BIGO Live에서 비즈니스 개발을 맡고 있습니다. 세 번의 이동은 모두 링크드인에서 시작됐습니다.",
+        "링크드인에 커리어를 기록하는 크리에이터입니다. 프로필 한 줄을 고치는 일부터 매주 글을 쓰는 일까지, 직접 해보고 결과를 확인한 것만 이야기합니다.",
         "그 과정을 기록하다 보니 두 권의 책이 됐고, 지금은 기업과 대학, 커뮤니티에서 링크드인 브랜딩을 이야기합니다.",
       ],
-      careerLabel: "커리어",
     },
     homeTalks: {
       eyebrow: "대표 사례",

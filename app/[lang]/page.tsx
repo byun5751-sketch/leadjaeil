@@ -35,7 +35,7 @@ export default async function HomePage({
 }) {
   const { lang } = await params;
   const t = getTranslations(lang as Lang);
-  const { books, activities, careers } = getData(lang as Lang);
+  const { books, activities } = getData(lang as Lang);
   const featuredTalks = activities.filter((a) => a.featured);
   const services = getComparison(lang as Lang);
   const reviews = getReviews(lang as Lang);
@@ -117,19 +117,27 @@ export default async function HomePage({
 
       {/* Stats */}
       <section className="border-b border-border bg-surface">
-        <div className="site-shell grid grid-cols-2 gap-6 py-10 md:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="font-serif text-3xl text-text">
-                <Counter
-                  value={stat.value}
-                  decimals={stat.decimals}
-                  suffix={stat.suffix}
-                />
-              </p>
-              <p className="mt-1 text-xs text-text-tertiary">{stat.label}</p>
-            </div>
-          ))}
+        <div className="site-shell py-10">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="font-serif text-3xl text-text">
+                  <Counter
+                    value={stat.value}
+                    decimals={stat.decimals}
+                    suffix={stat.suffix}
+                  />
+                </p>
+                <p className="mt-1 text-xs text-text-tertiary">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          {/* The service pages quote LinkedIn alone at 22,000+, so say out loud
+              which basis this number is on rather than let the two read as a
+              contradiction. */}
+          <p className="mt-6 text-center text-xs leading-relaxed text-text-tertiary">
+            {t.stats.note}
+          </p>
         </div>
       </section>
 
@@ -176,41 +184,21 @@ export default async function HomePage({
       </section>
 
 
-      {/* Who is behind this — read right before the proof of the work. */}
+      {/* Who is behind this — read right before the proof of the work. Kept to
+          the LinkedIn creator identity on purpose: the employers are the day
+          job, not what a visitor is here to book. */}
       <section className="border-b border-border">
         <div className="site-shell py-16 md:py-20">
-          <div className="grid gap-10 md:grid-cols-[1.3fr_1fr]">
-            <div>
-              <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
-                {t.intro.eyebrow}
+          <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
+            {t.intro.eyebrow}
+          </p>
+          <h2 className="mt-2 font-serif text-3xl text-text">{t.intro.title}</h2>
+          <div className="mt-6 max-w-2xl space-y-4">
+            {t.intro.paragraphs.map((p) => (
+              <p key={p} className="leading-relaxed text-text-secondary">
+                {p}
               </p>
-              <h2 className="mt-2 font-serif text-3xl text-text">{t.intro.title}</h2>
-              <div className="mt-6 space-y-4">
-                {t.intro.paragraphs.map((p) => (
-                  <p key={p} className="max-w-xl leading-relaxed text-text-secondary">
-                    {p}
-                  </p>
-                ))}
-              </div>
-            </div>
-            <div className="self-start rounded-xl border border-border bg-surface p-6">
-              <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
-                {t.intro.careerLabel}
-              </p>
-              <ul className="mt-5 space-y-4">
-                {careers.map((career) => (
-                  <li key={career.company}>
-                    <div className="flex items-baseline justify-between gap-3">
-                      <p className="font-medium text-text">{career.company}</p>
-                      <span className="shrink-0 text-xs text-text-tertiary">
-                        {career.period}
-                      </span>
-                    </div>
-                    <p className="mt-0.5 text-sm text-text-secondary">{career.role}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
       </section>
