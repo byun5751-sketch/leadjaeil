@@ -16,8 +16,8 @@ export function Footer({ lang }: { lang: Lang }) {
             <p className="mt-4 text-sm leading-relaxed text-text-secondary">
               {t.footer.tagline}
             </p>
-            {/* The channel hub is no longer in the top nav, so this button is
-                how visitors reach it. */}
+            {/* Mirrors the SNS button in the top nav, for visitors who reach
+                the bottom of a page instead of scrolling back up. */}
             <Link
               href={`/${lang}/links`}
               className="group mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-medium text-text transition-colors hover:border-accent-light hover:text-accent"

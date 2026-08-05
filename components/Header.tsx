@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, Share2, X } from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 
@@ -76,6 +76,13 @@ export function Header({ lang }: { lang: Lang }) {
             </Link>
           </div>
           <Link
+            href={`/${lang}/links`}
+            className="hidden items-center gap-1.5 rounded-full border border-border bg-surface px-3.5 py-1.5 text-[13px] font-medium text-text-secondary transition-colors hover:border-accent-light hover:text-text sm:inline-flex"
+          >
+            <Share2 size={14} />
+            {t.nav.links}
+          </Link>
+          <Link
             href={`/${lang}/contact`}
             className="hidden rounded-full bg-highlight px-4 py-1.5 text-[13px] font-medium text-white transition-colors hover:bg-text sm:inline-block"
           >
@@ -119,6 +126,16 @@ export function Header({ lang }: { lang: Lang }) {
               );
             })}
             <li className="mt-1">
+              <Link
+                href={`/${lang}/links`}
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-center gap-1.5 rounded-lg border border-border bg-surface px-3 py-2.5 text-center text-sm font-medium text-text transition-colors hover:border-accent-light hover:text-accent"
+              >
+                <Share2 size={15} />
+                {t.nav.links}
+              </Link>
+            </li>
+            <li>
               <Link
                 href={`/${lang}/contact`}
                 onClick={() => setMenuOpen(false)}
