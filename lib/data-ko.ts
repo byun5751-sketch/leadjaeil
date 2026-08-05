@@ -83,6 +83,8 @@ export const activitiesKo: Activity[] = [
       "참석자 설문(응답 5명)에서 만족도 5.0 / 5.0, 응답자 전원이 추천 의향",
     ],
     featured: true,
+    image: "/speaking/microsoft-ai-playground.jpg",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7479693507780034560",
   },
   {
     slug: "twojobmate-linkedin-lecture",
@@ -113,6 +115,7 @@ export const activitiesKo: Activity[] = [
       "글로벌 무대 프레젠터 자질 입증",
     ],
     featured: true,
+    image: "/speaking/yonsei-greenprint.jpg",
   },
   {
     slug: "hyphencon",
@@ -128,6 +131,7 @@ export const activitiesKo: Activity[] = [
       "'고봉밥같이 꽉 찬 강의' 평가",
     ],
     featured: true,
+    image: "/speaking/hyphencon.jpg",
   },
   {
     slug: "founders",
@@ -256,6 +260,7 @@ export const activitiesKo: Activity[] = [
       "크로스 플랫폼 협업 직접 제안\xB7성사",
       "약 40명 대상, 2시간 풀 프로그램",
     ],
+    image: "/speaking/joint-book-talk.jpg",
   },
   {
     slug: "ebook-reader-event",

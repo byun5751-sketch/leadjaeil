@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { Mic, Users, TrendingUp, ChevronDown, Star, ArrowRight } from "lucide-react";
+import {
+  Mic,
+  Users,
+  TrendingUp,
+  ChevronDown,
+  Star,
+  ArrowRight,
+  ExternalLink,
+} from "lucide-react";
 import type { Lang } from "@/lib/i18n";
 import { getTranslations } from "@/lib/i18n";
 import { getData } from "@/lib/get-data";
@@ -28,6 +37,7 @@ function ActivityCard({
   activity: Activity;
   lang: Lang;
 }) {
+  const t = getTranslations(lang);
   return (
     <details className="group rounded-xl border border-border bg-surface">
       <summary className="flex cursor-pointer list-none items-start justify-between gap-4 p-6">
@@ -46,6 +56,17 @@ function ActivityCard({
             {lang === "ko" ? "규모" : "Audience"}: {activity.audience}
           </p>
         )}
+        {activity.image && (
+          <div className="relative mt-4 aspect-[3/2] overflow-hidden rounded-xl bg-surface-warm">
+            <Image
+              src={activity.image}
+              alt={activity.title}
+              fill
+              sizes="(min-width: 768px) 720px, 100vw"
+              className="object-cover"
+            />
+          </div>
+        )}
         <p className="mt-3 text-sm leading-relaxed text-text-secondary">{activity.summary}</p>
         {activity.highlights.length > 0 && (
           <ul className="mt-4 space-y-1.5">
@@ -56,6 +77,17 @@ function ActivityCard({
               </li>
             ))}
           </ul>
+        )}
+        {activity.link && (
+          <a
+            href={activity.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+          >
+            {t.speakingPage.postLink}
+            <ExternalLink size={14} />
+          </a>
         )}
       </div>
     </details>
@@ -115,8 +147,20 @@ export default async function SpeakingPage({
             {featured.map((item) => (
               <article
                 key={item.slug}
-                className="flex flex-col rounded-2xl border border-accent bg-surface p-6"
+                className="flex flex-col overflow-hidden rounded-2xl border border-accent bg-surface"
               >
+                {item.image && (
+                  <div className="relative aspect-[3/2] bg-surface-warm">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col p-6">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-xs text-text-tertiary">{item.date}</span>
                   {item.audience && (
@@ -144,6 +188,18 @@ export default async function SpeakingPage({
                     ))}
                   </ul>
                 )}
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+                  >
+                    {t.speakingPage.postLink}
+                    <ExternalLink size={14} />
+                  </a>
+                )}
+                </div>
               </article>
             ))}
           </div>

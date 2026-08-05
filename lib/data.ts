@@ -36,6 +36,11 @@ export type Activity = {
    *  which is what running a room actually demonstrates. Keep the same slugs
    *  flagged in data-ko.ts. */
   featured?: boolean;
+  /** Photo from the event, served out of /public/speaking. Keep it in sync
+   *  with data-ko.ts — the same event has the same photo in both languages. */
+  image?: string;
+  /** A public post about the event, if there is one. */
+  link?: string;
 };
 
 export type Channel = {
@@ -135,6 +140,8 @@ export const activities: Activity[] = [
       "Attendee survey (5 responses): 5.0 / 5.0 satisfaction, every respondent would recommend it",
     ],
     featured: true,
+    image: "/speaking/microsoft-ai-playground.jpg",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7479693507780034560",
   },
   {
     slug: "twojobmate-linkedin-lecture",
@@ -165,6 +172,7 @@ export const activities: Activity[] = [
       "Proved global stage presentation skills",
     ],
     featured: true,
+    image: "/speaking/yonsei-greenprint.jpg",
   },
   {
     slug: "hyphencon",
@@ -180,6 +188,7 @@ export const activities: Activity[] = [
       "Praised as 'packed like a full bowl of rice'",
     ],
     featured: true,
+    image: "/speaking/hyphencon.jpg",
   },
   {
     slug: "founders",
@@ -308,6 +317,7 @@ export const activities: Activity[] = [
       "Self-initiated cross-platform collaboration",
       "~40 attendees, 2-hour full program",
     ],
+    image: "/speaking/joint-book-talk.jpg",
   },
   {
     slug: "ebook-reader-event",

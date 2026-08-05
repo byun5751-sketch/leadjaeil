@@ -185,6 +185,7 @@ const t = {
       speaking: "Speaking & Lectures",
       mentoring: "Mentoring",
       campaign: "Campaigns & Publishing",
+      postLink: "Read the post",
     },
     contactPage: {
       eyebrow: "Inquiries",
@@ -400,6 +401,7 @@ const t = {
       speaking: "강연 \xB7 강의",
       mentoring: "멘토링",
       campaign: "캠페인 \xB7 출판 \xB7 커뮤니티",
+      postLink: "관련 포스트 보기",
     },
     contactPage: {
       eyebrow: "문의하기",
