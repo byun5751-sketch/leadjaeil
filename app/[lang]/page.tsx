@@ -17,6 +17,7 @@ import { getData, getReviews } from "@/lib/get-data";
 import { getComparison } from "@/lib/services";
 import { alternatesFor } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
+import { Counter } from "@/components/Counter";
 
 export async function generateMetadata({
   params,
@@ -34,7 +35,7 @@ export default async function HomePage({
 }) {
   const { lang } = await params;
   const t = getTranslations(lang as Lang);
-  const { books, activities } = getData(lang as Lang);
+  const { books, activities, careers } = getData(lang as Lang);
   const featuredTalks = activities.filter((a) => a.featured);
   const services = getComparison(lang as Lang);
   const reviews = getReviews(lang as Lang);
@@ -46,6 +47,22 @@ export default async function HomePage({
     { icon: Target, href: `/${lang}/services/career-challenge` },
     { icon: Briefcase, href: `/${lang}/services/linkedin-workshop` },
     { icon: Mic, href: `/${lang}/speaking` },
+  ];
+
+  // Impressions are worded differently per locale — 130만 vs 1.3M — so the
+  // figure and its unit are split rather than kept as one formatted string.
+  const stats: {
+    value: number;
+    decimals?: number;
+    suffix?: string;
+    label: string;
+  }[] = [
+    { value: 30000, suffix: "+", label: t.stats.followers },
+    lang === "ko"
+      ? { value: 130, suffix: "만+", label: t.stats.views }
+      : { value: 1.3, decimals: 1, suffix: "M+", label: t.stats.views },
+    { value: 3, label: t.stats.careerMoves },
+    { value: 11, label: t.stats.events },
   ];
 
   return (
@@ -101,14 +118,15 @@ export default async function HomePage({
       {/* Stats */}
       <section className="border-b border-border bg-surface">
         <div className="site-shell grid grid-cols-2 gap-6 py-10 md:grid-cols-4">
-          {[
-            { value: "30,000+", label: t.stats.followers },
-            { value: lang === "ko" ? "130만+" : "1.3M+", label: t.stats.views },
-            { value: "3", label: t.stats.careerMoves },
-            { value: "11", label: t.stats.events },
-          ].map((stat) => (
+          {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="font-serif text-3xl text-text">{stat.value}</p>
+              <p className="font-serif text-3xl text-text">
+                <Counter
+                  value={stat.value}
+                  decimals={stat.decimals}
+                  suffix={stat.suffix}
+                />
+              </p>
               <p className="mt-1 text-xs text-text-tertiary">{stat.label}</p>
             </div>
           ))}
@@ -158,6 +176,45 @@ export default async function HomePage({
       </section>
 
 
+      {/* Who is behind this — read right before the proof of the work. */}
+      <section className="border-b border-border">
+        <div className="site-shell py-16 md:py-20">
+          <div className="grid gap-10 md:grid-cols-[1.3fr_1fr]">
+            <div>
+              <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
+                {t.intro.eyebrow}
+              </p>
+              <h2 className="mt-2 font-serif text-3xl text-text">{t.intro.title}</h2>
+              <div className="mt-6 space-y-4">
+                {t.intro.paragraphs.map((p) => (
+                  <p key={p} className="max-w-xl leading-relaxed text-text-secondary">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            </div>
+            <div className="self-start rounded-xl border border-border bg-surface p-6">
+              <p className="text-[11px] font-medium uppercase tracking-widest text-text-tertiary">
+                {t.intro.careerLabel}
+              </p>
+              <ul className="mt-5 space-y-4">
+                {careers.map((career) => (
+                  <li key={career.company}>
+                    <div className="flex items-baseline justify-between gap-3">
+                      <p className="font-medium text-text">{career.company}</p>
+                      <span className="shrink-0 text-xs text-text-tertiary">
+                        {career.period}
+                      </span>
+                    </div>
+                    <p className="mt-0.5 text-sm text-text-secondary">{career.role}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Selected talks */}
       <section className="border-b border-border bg-surface">
         <div className="site-shell py-20">
@@ -172,30 +229,43 @@ export default async function HomePage({
               <Link
                 key={talk.slug}
                 href={`/${lang}/speaking`}
-                className="group flex flex-col rounded-xl border border-border bg-bg p-6 transition-colors hover:border-accent-light"
+                className="group flex flex-col overflow-hidden rounded-xl border border-border bg-bg transition-colors hover:border-accent-light"
               >
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs text-text-tertiary">{talk.date}</span>
-                  {talk.audience && (
-                    <span className="rounded-full bg-accent-bg px-2.5 py-0.5 text-[11px] font-medium text-accent">
-                      {talk.audience}
-                    </span>
-                  )}
+                {talk.image && (
+                  <div className="relative aspect-[3/2] bg-surface-warm">
+                    <Image
+                      src={talk.image}
+                      alt={talk.title}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-xs text-text-tertiary">{talk.date}</span>
+                    {talk.audience && (
+                      <span className="rounded-full bg-accent-bg px-2.5 py-0.5 text-[11px] font-medium text-accent">
+                        {talk.audience}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="mt-3 font-serif text-lg leading-snug text-text group-hover:text-accent">
+                    {talk.title}
+                  </h3>
+                  <ul className="mt-auto space-y-1.5 pt-4">
+                    {talk.highlights.slice(0, 2).map((h, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-xs leading-relaxed text-text-secondary"
+                      >
+                        <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="mt-3 font-serif text-lg leading-snug text-text group-hover:text-accent">
-                  {talk.title}
-                </h3>
-                <ul className="mt-auto space-y-1.5 pt-4">
-                  {talk.highlights.slice(0, 2).map((h, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-xs leading-relaxed text-text-secondary"
-                    >
-                      <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
               </Link>
             ))}
           </div>

@@ -67,6 +67,15 @@ const t = {
         },
       ],
     },
+    intro: {
+      eyebrow: "About",
+      title: "Who is Lead Jaeil",
+      paragraphs: [
+        "Started with the STAR global internship at SAP Korea, moved on to ZEISS Vision Korea, and now works in business development at BIGO Live. All three moves started on LinkedIn.",
+        "Writing down what those moves took turned into two books, and into sessions on LinkedIn branding for companies, universities, and communities.",
+      ],
+      careerLabel: "Career",
+    },
     homeTalks: {
       eyebrow: "Selected work",
       title: "Recent sessions",
@@ -289,6 +298,15 @@ const t = {
           cta: "강연 이력 보기",
         },
       ],
+    },
+    intro: {
+      eyebrow: "소개",
+      title: "리드제일은 누구인가요",
+      paragraphs: [
+        "SAP 코리아 STAR 글로벌 인턴십으로 시작해 자이스(ZEISS) 비전 코리아를 거쳐, 지금은 BIGO Live에서 비즈니스 개발을 맡고 있습니다. 세 번의 이동은 모두 링크드인에서 시작됐습니다.",
+        "그 과정을 기록하다 보니 두 권의 책이 됐고, 지금은 기업과 대학, 커뮤니티에서 링크드인 브랜딩을 이야기합니다.",
+      ],
+      careerLabel: "커리어",
     },
     homeTalks: {
       eyebrow: "대표 사례",

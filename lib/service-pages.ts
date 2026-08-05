@@ -367,6 +367,8 @@ export const servicePages: ServicePage[] = [
           "Deliverables arrive after the session as a Notion page or a PDF.",
           "Both English and Korean profiles are supported.",
           "The date is agreed after an email or KakaoTalk conversation. Applying does not book a slot on its own.",
+          "Payment goes through Latpeed or a bank transfer, arranged once the date is set.",
+          "Cancel seven days or more before the session for a full refund. Inside seven days no refund is possible.",
         ],
       },
       {
@@ -393,6 +395,14 @@ export const servicePages: ServicePage[] = [
           {
             q: "Is it English profiles only?",
             a: "Both English and Korean profiles are supported. An English profile is recommended if you are targeting global companies, but a Korean profile works well for foreign-invested companies hiring in Korea.",
+          },
+          {
+            q: "How do I pay?",
+            a: "Through Latpeed or a bank transfer. Which one, and the details, are sent once the date is agreed by email or KakaoTalk.",
+          },
+          {
+            q: "What is the refund policy?",
+            a: "Cancel seven days or more before the session and you are refunded in full. Inside seven days the pre-session research is already underway, so no refund is possible.",
           },
         ],
       },
@@ -734,6 +744,8 @@ export const servicePages: ServicePage[] = [
           "Missing a live lecture is fine — the recording counts as attendance.",
           "No certificate is issued if you miss the week 5 share session.",
           "Profiles are written in English, so basic English is required.",
+          "Payment goes through Latpeed or a bank transfer.",
+          "Cancel seven days or more before the first lecture for a full refund. After that no refund is possible — separate from the ₩100,000 returned on full mission completion.",
         ],
       },
       {
@@ -756,6 +768,14 @@ export const servicePages: ServicePage[] = [
           {
             q: "Is there a textbook?",
             a: "“It works! LinkedIn” is required, and you need to purchase it separately to follow the curriculum comfortably.",
+          },
+          {
+            q: "How do I pay?",
+            a: "Through Latpeed or a bank transfer. The details are sent once your place is confirmed.",
+          },
+          {
+            q: "What is the refund policy?",
+            a: "Cancel seven days or more before the first lecture and you are refunded in full. After that no refund is possible. This is separate from the ₩100,000 returned when every mission is complete.",
           },
         ],
       },
